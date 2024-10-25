@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'grid';
+@import 'stats';
+@import 'transitions';
+
+// Reset styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overscroll-behavior: none;
+}
