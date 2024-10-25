@@ -1,7 +1,7 @@
-@import 'variables';
-@import 'grid';
-@import 'stats';
-@import 'transitions';
+@use 'variables' as *;
+@use 'grid' as *;
+@use 'stats' as *;
+@use 'transitions' as *;
 
 // Reset styles
 * {

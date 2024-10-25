@@ -13,5 +13,8 @@
         "postcss-hash": "^3.0.0",
         "sass": "^1.80.4",
         "vite": "^5.4.10"
+    },
+    "dependencies": {
+        "sass-embedded": "^1.80.4"
     }
 }

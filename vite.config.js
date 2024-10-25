@@ -2,12 +2,17 @@ import postcssHash from 'postcss-hash';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    root: 'src',  // Set src as root
+    root: 'src',
     build: {
         outDir: '../dist',
         emptyOutDir: true
     },
     css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler',
+            },
+        },
         postcss: {
             plugins: [
                 postcssHash({
