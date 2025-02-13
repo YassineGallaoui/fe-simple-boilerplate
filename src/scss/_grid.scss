@@ -9,7 +9,7 @@
     --column-width: 1fr;
     --gutter: 16px;
     --container-padding: 16px;
-    --max-width: calc(var(--column-width) * var(--columns) + var(--gutter) * calc(var(--columns) - 1));
+    /* --max-width: calc(var(--column-width) * var(--columns) + var(--gutter) * calc(var(--columns) - 1)); */
 }
 
 @media (min-width: 1025px) {
