@@ -2,6 +2,7 @@
 @use 'grid' as *;
 @use 'stats' as *;
 @use 'transitions' as *;
+@use 'position' as *;
 
 // Reset styles
 * {
@@ -9,4 +10,21 @@
     padding: 0;
     box-sizing: border-box;
     overscroll-behavior: none;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+h1 {
+    padding: 2rem 0;
+}
+
+#firstLine {
+    align-items: center;
+}
+
+ul {
+    padding: auto;
+    margin: 0 0 0 1.5rem;
 }

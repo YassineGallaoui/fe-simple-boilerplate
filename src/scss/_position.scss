@@ -1,0 +1,37 @@
+@mixin margin-top($value) {
+    margin-top: $value;
+}
+
+@mixin margin-bottom($value) {
+    margin-bottom: $value;
+}
+
+@mixin margin-left($value) {
+    margin-left: $value;
+}
+
+@mixin margin-right($value) {
+    margin-right: $value;
+}
+
+@function rem($value) {
+    @return #{$value}rem;
+}
+
+@for $i from 1 through 100 {
+    .mt-#{$i} {
+        @include margin-top(rem($i));
+    }
+
+    .mb-#{$i} {
+        @include margin-bottom(rem($i));
+    }
+
+    .ml-#{$i} {
+        @include margin-left(rem($i));
+    }
+
+    .mr-#{$i} {
+        @include margin-right(rem($i));
+    }
+}
