@@ -1,37 +1,37 @@
-@mixin margin-top($value) {
-    margin-top: $value;
+@mixin margin-top-mixin($value) {
+  margin-top: $value;
 }
 
-@mixin margin-bottom($value) {
-    margin-bottom: $value;
+@mixin margin-bottom-mixin($value) {
+  margin-bottom: $value;
 }
 
-@mixin margin-left($value) {
-    margin-left: $value;
+@mixin margin-left-mixin($value) {
+  margin-left: $value;
 }
 
-@mixin margin-right($value) {
-    margin-right: $value;
+@mixin margin-right-mixin($value) {
+  margin-right: $value;
 }
 
 @function rem($value) {
-    @return #{$value}rem;
+  @return #{$value}rem;
 }
 
 @for $i from 1 through 100 {
-    .mt-#{$i} {
-        @include margin-top(rem($i));
-    }
+  .mt-#{$i} {
+    @include margin-top-mixin(rem($i));
+  }
 
-    .mb-#{$i} {
-        @include margin-bottom(rem($i));
-    }
+  .mb-#{$i} {
+    @include margin-bottom-mixin(rem($i));
+  }
 
-    .ml-#{$i} {
-        @include margin-left(rem($i));
-    }
+  .ml-#{$i} {
+    @include margin-left-mixin(rem($i));
+  }
 
-    .mr-#{$i} {
-        @include margin-right(rem($i));
-    }
+  .mr-#{$i} {
+    @include margin-right-mixin(rem($i));
+  }
 }

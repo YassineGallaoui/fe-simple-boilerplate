@@ -6,11 +6,16 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "format:code": "biome format --write \"**/*.{js,jsx,ts,tsx,json}\"",
+        "format:styles": "prettier --write \"**/*.{css,scss}\"",
+        "format": "npm run format:code && npm run format:styles"
     },
     "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
         "postcss": "^8.4.47",
         "postcss-hash": "^3.0.0",
+        "prettier": "^3.5.3",
         "sass": "^1.80.4",
         "vite": "^5.4.10"
     },

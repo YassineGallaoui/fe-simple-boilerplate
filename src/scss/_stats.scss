@@ -1,16 +1,16 @@
 #stats {
-    display: none;
+  display: none;
 
-    &.show {
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: start;
-        top: 0;
-        right: 0;
-        color: white;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 0.5rem 0.5rem;
-    }
+  &.show {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+    top: 0;
+    right: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem 0.5rem;
+  }
 }

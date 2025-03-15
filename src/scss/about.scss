@@ -1,7 +1,7 @@
 @use './general.scss' as *;
 
 body {
-    &.is-transitioning{
-        transform: translateX(-100px);
-    }
+  &.is-transitioning {
+    transform: translateX(-100px);
+  }
 }
