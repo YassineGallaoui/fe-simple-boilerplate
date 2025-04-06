@@ -1,63 +1,76 @@
 // src/js/helpers/grid.js
 
-/**
- * Creates the grid overlay structure
- * @returns {HTMLElement} The grid overlay element
- */
-function createGridOverlay() {
-  const overlay = document.createElement('div');
-  overlay.className = 'grid-overlay show';
+class Grid {
+  constructor() {
+    this.overlay = null;
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
 
-  const container = document.createElement('div');
-  container.className = 'container';
+  /**
+   * Creates the grid overlay structure
+   * @returns {HTMLElement} The grid overlay element
+   */
+  createGridOverlay() {
+    const overlay = document.createElement('div');
+    overlay.className = 'grid-overlay show';
 
-  const row = document.createElement('div');
-  row.className = 'row';
+    const container = document.createElement('div');
+    container.className = 'container';
 
-  container.appendChild(row);
-  overlay.appendChild(container);
+    const row = document.createElement('div');
+    row.className = 'row';
 
-  return overlay;
-}
+    container.appendChild(row);
+    overlay.appendChild(container);
 
-/**
- * Toggles the grid overlay visibility
- * @param {HTMLElement} overlay - The grid overlay element
- * @param {boolean} show - Whether to show or hide the overlay
- */
-function toggleGridOverlay(overlay, show) {
-  if (show) {
-    if (!overlay.children.length) {
-      const newOverlay = createGridOverlay();
-      overlay.innerHTML = '';
-      overlay.appendChild(newOverlay);
+    return overlay;
+  }
+
+  /**
+   * Toggles the grid overlay visibility
+   * @param {HTMLElement} overlay - The grid overlay element
+   * @param {boolean} show - Whether to show or hide the overlay
+   */
+  toggleGridOverlay(show) {
+    if (show) {
+      if (!this.overlay.children.length) {
+        const newOverlay = this.createGridOverlay();
+        this.overlay.innerHTML = '';
+        this.overlay.appendChild(newOverlay);
+      }
+      this.overlay.classList.add('show');
+    } else {
+      this.overlay.classList.remove('show');
     }
-    overlay.classList.add('show');
-  } else {
-    overlay.classList.remove('show');
+  }
+
+  /**
+   * Handles keyboard events for grid toggling
+   * @param {KeyboardEvent} e - The keyboard event
+   */
+  handleKeyPress(e) {
+    if (e.key.toLowerCase() === 'g') {
+      this.toggleGridOverlay(!this.overlay.classList.contains('show'));
+    }
+  }
+
+  /**
+   * Initializes the grid overlay functionality
+   */
+  init() {
+    // Create and insert grid overlay
+    this.overlay = this.createGridOverlay();
+    document.body.insertBefore(this.overlay, document.body.firstChild);
+
+    // Add keyboard shortcut listener
+    document.addEventListener('keydown', this.handleKeyPress);
+
+    // Return cleanup function
+    return () => {
+      document.removeEventListener('keydown', this.handleKeyPress);
+      this.overlay.remove();
+    };
   }
 }
 
-/**
- * Initializes the grid overlay functionality
- */
-export function initGrid() {
-  // Create and insert grid overlay
-  const overlay = createGridOverlay();
-  document.body.insertBefore(overlay, document.body.firstChild);
-
-  // Add keyboard shortcut listener
-  const handleKeyPress = (e) => {
-    if (e.key.toLowerCase() === 'g') {
-      toggleGridOverlay(overlay, !overlay.classList.contains('show'));
-    }
-  };
-
-  document.addEventListener('keydown', handleKeyPress);
-
-  // Cleanup function
-  return () => {
-    document.removeEventListener('keydown', handleKeyPress);
-    overlay.remove();
-  };
-}
+export const grid = new Grid();

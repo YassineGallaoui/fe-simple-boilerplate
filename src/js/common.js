@@ -1,8 +1,9 @@
-import { initGrid } from './helpers/grid';
-import { initStats } from './helpers/stats';
+import { grid } from './helpers/grid';
+import { router } from './helpers/routing/router';
+import { stats } from './helpers/stats';
 
 document.addEventListener('DOMContentLoaded', () => {
-  /* initRouter(); */
-  initGrid();
-  initStats();
-});
+  router.init();
+  grid.init();
+  stats.init();
+})

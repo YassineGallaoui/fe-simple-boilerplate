@@ -13,9 +13,11 @@
 html {
   font-size: $font-size-base;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
+  position: relative;
   font-family: $font-family-base;
   line-height: $line-height-base;
   color: $foreground-color;

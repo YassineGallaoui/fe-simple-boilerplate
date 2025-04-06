@@ -4,3 +4,9 @@
 @use './utils/stats';
 @use './utils/text';
 @use './utils/spacing';
+@use './utils/router';
+
+.navbarLink {
+    text-align: right;
+    align-self: center;
+}
