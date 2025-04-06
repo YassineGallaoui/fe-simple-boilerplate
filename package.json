@@ -1,25 +1,34 @@
 {
-	"name": "webapp-boilerplate",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
-		"format:code": "biome format --write ./*",
-		"format:styles": "prettier --write \"**/*.{css,scss}\"",
-		"format": "npm run format:code && npm run format:styles"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"postcss": "^8.4.47",
-		"postcss-hash": "^3.0.0",
-		"prettier": "^3.5.3",
-		"sass": "^1.80.4",
-		"vite": "^5.4.10"
-	},
-	"dependencies": {
-		"sass-embedded": "^1.80.4"
-	}
+  "name": "simpleboilerplate",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "sass": "^1.86.1",
+    "vite": "^6.2.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,scss,md}": [
+      "prettier --write"
+    ]
+  }
 }

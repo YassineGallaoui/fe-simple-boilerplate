@@ -1,0 +1,26 @@
+@use 'variables' as *;
+
+.stats {
+  display: none;
+  font-family: monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  z-index: $z-index-tooltip;
+
+  &.show {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    top: $spacing-unit;
+    right: $spacing-unit;
+    color: $background-color;
+    background: rgba($foreground-color, 0.8);
+    padding: $spacing-unit;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba($background-color, 0.1);
+  }
+}

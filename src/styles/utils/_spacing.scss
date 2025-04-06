@@ -1,0 +1,89 @@
+// Spacing utilities
+// Base unit: 0.25rem
+$spacing-base: 0.25rem;
+
+// Generate margin and padding utilities
+@for $i from 0 through 100 {
+
+    .inset-#{$i} {
+        inset: $spacing-base * $i !important;
+    }
+
+    .t-#{$i} {
+        top: $spacing-base * $i !important;
+    }
+
+    .r-#{$i} {
+        right: $spacing-base * $i !important;
+    }
+
+    .b-#{$i} {
+        bottom: $spacing-base * $i !important;
+    }
+
+    .l-#{$i} {
+        left: $spacing-base * $i !important;
+    }
+
+    // Margins
+    .m-#{$i} {
+        margin: $spacing-base * $i !important;
+    }
+
+    .mt-#{$i} {
+        margin-top: $spacing-base * $i !important;
+    }
+
+    .mr-#{$i} {
+        margin-right: $spacing-base * $i !important;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: $spacing-base * $i !important;
+    }
+
+    .ml-#{$i} {
+        margin-left: $spacing-base * $i !important;
+    }
+
+    .mx-#{$i} {
+        margin-left: $spacing-base * $i !important;
+        margin-right: $spacing-base * $i !important;
+    }
+
+    .my-#{$i} {
+        margin-top: $spacing-base * $i !important;
+        margin-bottom: $spacing-base * $i !important;
+    }
+
+    // Paddings
+    .p-#{$i} {
+        padding: $spacing-base * $i !important;
+    }
+
+    .pt-#{$i} {
+        padding-top: $spacing-base * $i !important;
+    }
+
+    .pr-#{$i} {
+        padding-right: $spacing-base * $i !important;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: $spacing-base * $i !important;
+    }
+
+    .pl-#{$i} {
+        padding-left: $spacing-base * $i !important;
+    }
+
+    .px-#{$i} {
+        padding-left: $spacing-base * $i !important;
+        padding-right: $spacing-base * $i !important;
+    }
+
+    .py-#{$i} {
+        padding-top: $spacing-base * $i !important;
+        padding-bottom: $spacing-base * $i !important;
+    }
+}

@@ -1,0 +1,48 @@
+// Colors
+$background-color: #f8f9fa;
+$foreground-color: #343a40;
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+
+// Typography
+$font-family-base: -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Breakpoints
+$breakpoint-sm: 577px;
+$breakpoint-md: 769px;
+$breakpoint-lg: 993px;
+$breakpoint-xl: 1201px;
+$breakpoint-xxl: 1441px;
+
+// Breakpoints
+$breakpoints: (
+    'sm': $breakpoint-sm,
+    'md': $breakpoint-md,
+    'lg': $breakpoint-lg,
+    'xl': $breakpoint-xl,
+    'xxl': $breakpoint-xxl
+);
+
+// Spacing
+$spacing-unit: 8px;
+$container-padding: 15px;
+
+// Grid columns
+$grid-columns-sm: 4;
+$grid-columns-md: 8;
+$grid-columns-lg: 12;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;

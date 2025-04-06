@@ -1,0 +1,62 @@
+@use 'variables' as *;
+
+// Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Base styles
+html {
+  font-size: $font-size-base;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  color: $foreground-color;
+  background-color: $background-color;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $spacing-unit * 2;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: $spacing-unit * 2;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul,
+ol {
+  margin-bottom: $spacing-unit * 2;
+  padding-left: $spacing-unit * 3;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}

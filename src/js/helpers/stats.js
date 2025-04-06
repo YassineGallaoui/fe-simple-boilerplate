@@ -1,24 +1,29 @@
 // src/js/grid.js
-
 const getCurrentInfo = () => {
-	return `
+    return `
         <div>${window.innerWidth} x ${window.innerHeight}</div>
         <div>Aspect Ratio: ${(window.innerWidth / window.innerHeight).toFixed(2)}</div>
     `;
 };
+
 export function initStats() {
-	const statsContainer = document.querySelector("#stats");
-	if (statsContainer) {
-		statsContainer.innerHTML = getCurrentInfo();
+    // Create stats div
+    const statsDiv = document.createElement('div');
+    statsDiv.id = 'stats';
+    statsDiv.className = 'stats';
+    statsDiv.innerHTML = getCurrentInfo();
 
-		window.addEventListener("resize", () => {
-			statsContainer.innerHTML = getCurrentInfo();
-		});
+    // Insert as first child of body
+    document.body.insertBefore(statsDiv, document.body.firstChild);
 
-		document.addEventListener("keydown", (e) => {
-			if (e.key.toLowerCase() === "s") {
-				statsContainer.classList.toggle("show");
-			}
-		});
-	}
+    // Add event listeners
+    window.addEventListener('resize', () => {
+        statsDiv.innerHTML = getCurrentInfo();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key.toLowerCase() === 's') {
+            statsDiv.classList.toggle('show');
+        }
+    });
 }
