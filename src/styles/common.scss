@@ -1,15 +1,11 @@
 @use './utils/variables';
 @use './utils/base';
 @use './utils/grid';
+@use './utils/flex';
 @use './utils/stats';
 @use './utils/text';
 @use './utils/spacing';
 @use './utils/router';
-
-.navbarLink {
-    text-align: right;
-    align-self: center;
-}
 
 :root {
     --background-color: #f8f8f8;
@@ -21,4 +17,9 @@
         --background-color: #171717;
         --foreground-color: #f8f8f8;
     }
+}
+
+.navbarLink {
+    text-align: right;
+    align-self: center;
 }
