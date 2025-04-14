@@ -99,7 +99,7 @@ export class Router {
     }
 
     wait(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms * 1.5));
+        return new Promise(resolve => setTimeout(resolve, ms * 1.2));
     }
 }
 
