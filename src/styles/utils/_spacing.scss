@@ -1,89 +1,251 @@
-// Spacing utilities
-// Base unit: 0.25rem
-$spacing-base: 0.25rem;
+@use './variables';
 
-// Generate margin and padding utilities
-@for $i from 0 through 100 {
+// ==========================================================================
+// SPACING SCALE MAP
+// ==========================================================================
+// Uses variables.$spacing-unit (e.g., 8px) as the base
+$spacing-scale: (
+    '0': 0,
+    '1': variables.$spacing-unit * 0.25,
+    // 2px
+    '2': variables.$spacing-unit * 0.5,
+    // 4px
+    '3': variables.$spacing-unit * 0.75,
+    // 6px
+    '4': variables.$spacing-unit * 1,
+    // 8px
+    '5': variables.$spacing-unit * 1.25,
+    // 10px
+    '6': variables.$spacing-unit * 1.5,
+    // 12px
+    '7': variables.$spacing-unit * 1.75,
+    // 14px
+    '8': variables.$spacing-unit * 2,
+    // 16px
+    '9': variables.$spacing-unit * 2.25,
+    // 18px
+    '10': variables.$spacing-unit * 2.5,
+    // 20px
+    '11': variables.$spacing-unit * 2.75,
+    // 22px
+    '12': variables.$spacing-unit * 3,
+    // 24px
+    '14': variables.$spacing-unit * 3.5,
+    // 28px
+    '16': variables.$spacing-unit * 4,
+    // 32px
+    '20': variables.$spacing-unit * 5,
+    // 40px
+    '24': variables.$spacing-unit * 6,
+    // 48px
+    '28': variables.$spacing-unit * 7,
+    // 56px
+    '32': variables.$spacing-unit * 8,
+    // 64px
+    '36': variables.$spacing-unit * 9,
+    // 72px
+    '40': variables.$spacing-unit * 10,
+    // 80px
+    '44': variables.$spacing-unit * 11,
+    // 88px
+    '48': variables.$spacing-unit * 12,
+    // 96px
+    '52': variables.$spacing-unit * 13,
+    // 104px
+    '56': variables.$spacing-unit * 14,
+    // 112px
+    '60': variables.$spacing-unit * 15,
+    // 120px
+    '64': variables.$spacing-unit * 16,
+    // 128px
+    '72': variables.$spacing-unit * 18,
+    // 144px
+    '80': variables.$spacing-unit * 20,
+    // 160px
+    '96': variables.$spacing-unit * 24 // 192px
+);
 
-    .inset-#{$i} {
-        inset: $spacing-base * $i !important;
+// ==========================================================================
+// SPACING UTILITIES (Non-Responsive)
+// ==========================================================================
+
+@each $key, $value in $spacing-scale {
+
+    // Inset
+    .inset-#{$key} {
+        inset: $value !important;
     }
 
-    .t-#{$i} {
-        top: $spacing-base * $i !important;
+    .t-#{$key} {
+        top: $value !important;
     }
 
-    .r-#{$i} {
-        right: $spacing-base * $i !important;
+    .r-#{$key} {
+        right: $value !important;
     }
 
-    .b-#{$i} {
-        bottom: $spacing-base * $i !important;
+    .b-#{$key} {
+        bottom: $value !important;
     }
 
-    .l-#{$i} {
-        left: $spacing-base * $i !important;
+    .l-#{$key} {
+        left: $value !important;
     }
 
     // Margins
-    .m-#{$i} {
-        margin: $spacing-base * $i !important;
+    .m-#{$key} {
+        margin: $value !important;
     }
 
-    .mt-#{$i} {
-        margin-top: $spacing-base * $i !important;
+    .mt-#{$key} {
+        margin-top: $value !important;
     }
 
-    .mr-#{$i} {
-        margin-right: $spacing-base * $i !important;
+    .mr-#{$key} {
+        margin-right: $value !important;
     }
 
-    .mb-#{$i} {
-        margin-bottom: $spacing-base * $i !important;
+    .mb-#{$key} {
+        margin-bottom: $value !important;
     }
 
-    .ml-#{$i} {
-        margin-left: $spacing-base * $i !important;
+    .ml-#{$key} {
+        margin-left: $value !important;
     }
 
-    .mx-#{$i} {
-        margin-left: $spacing-base * $i !important;
-        margin-right: $spacing-base * $i !important;
+    .mx-#{$key} {
+        margin-left: $value !important;
+        margin-right: $value !important;
     }
 
-    .my-#{$i} {
-        margin-top: $spacing-base * $i !important;
-        margin-bottom: $spacing-base * $i !important;
+    .my-#{$key} {
+        margin-top: $value !important;
+        margin-bottom: $value !important;
     }
 
     // Paddings
-    .p-#{$i} {
-        padding: $spacing-base * $i !important;
+    .p-#{$key} {
+        padding: $value !important;
     }
 
-    .pt-#{$i} {
-        padding-top: $spacing-base * $i !important;
+    .pt-#{$key} {
+        padding-top: $value !important;
     }
 
-    .pr-#{$i} {
-        padding-right: $spacing-base * $i !important;
+    .pr-#{$key} {
+        padding-right: $value !important;
     }
 
-    .pb-#{$i} {
-        padding-bottom: $spacing-base * $i !important;
+    .pb-#{$key} {
+        padding-bottom: $value !important;
     }
 
-    .pl-#{$i} {
-        padding-left: $spacing-base * $i !important;
+    .pl-#{$key} {
+        padding-left: $value !important;
     }
 
-    .px-#{$i} {
-        padding-left: $spacing-base * $i !important;
-        padding-right: $spacing-base * $i !important;
+    .px-#{$key} {
+        padding-left: $value !important;
+        padding-right: $value !important;
     }
 
-    .py-#{$i} {
-        padding-top: $spacing-base * $i !important;
-        padding-bottom: $spacing-base * $i !important;
+    .py-#{$key} {
+        padding-top: $value !important;
+        padding-bottom: $value !important;
+    }
+}
+
+
+// ==========================================================================
+// SPACING UTILITIES (Responsive)
+// ==========================================================================
+
+@each $breakpoint, $bp-value in variables.$breakpoints {
+    @media (min-width: $bp-value) {
+        @each $key, $value in $spacing-scale {
+
+            // Responsive Inset
+            .#{$breakpoint}-inset-#{$key} {
+                inset: $value !important;
+            }
+
+            .#{$breakpoint}-t-#{$key} {
+                top: $value !important;
+            }
+
+            .#{$breakpoint}-r-#{$key} {
+                right: $value !important;
+            }
+
+            .#{$breakpoint}-b-#{$key} {
+                bottom: $value !important;
+            }
+
+            .#{$breakpoint}-l-#{$key} {
+                left: $value !important;
+            }
+
+            // Responsive Margins
+            .#{$breakpoint}-m-#{$key} {
+                margin: $value !important;
+            }
+
+            .#{$breakpoint}-mt-#{$key} {
+                margin-top: $value !important;
+            }
+
+            .#{$breakpoint}-mr-#{$key} {
+                margin-right: $value !important;
+            }
+
+            .#{$breakpoint}-mb-#{$key} {
+                margin-bottom: $value !important;
+            }
+
+            .#{$breakpoint}-ml-#{$key} {
+                margin-left: $value !important;
+            }
+
+            .#{$breakpoint}-mx-#{$key} {
+                margin-left: $value !important;
+                margin-right: $value !important;
+            }
+
+            .#{$breakpoint}-my-#{$key} {
+                margin-top: $value !important;
+                margin-bottom: $value !important;
+            }
+
+            // Responsive Paddings
+            .#{$breakpoint}-p-#{$key} {
+                padding: $value !important;
+            }
+
+            .#{$breakpoint}-pt-#{$key} {
+                padding-top: $value !important;
+            }
+
+            .#{$breakpoint}-pr-#{$key} {
+                padding-right: $value !important;
+            }
+
+            .#{$breakpoint}-pb-#{$key} {
+                padding-bottom: $value !important;
+            }
+
+            .#{$breakpoint}-pl-#{$key} {
+                padding-left: $value !important;
+            }
+
+            .#{$breakpoint}-px-#{$key} {
+                padding-left: $value !important;
+                padding-right: $value !important;
+            }
+
+            .#{$breakpoint}-py-#{$key} {
+                padding-top: $value !important;
+                padding-bottom: $value !important;
+            }
+        }
     }
 }
