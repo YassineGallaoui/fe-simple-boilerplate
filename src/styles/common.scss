@@ -7,6 +7,12 @@
 @use './utils/spacing';
 @use './utils/router';
 
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+}
+
 :root {
     --background-color: #f8f8f8;
     --foreground-color: #171717;
