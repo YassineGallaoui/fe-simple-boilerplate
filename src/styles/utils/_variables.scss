@@ -1,6 +1,6 @@
 // Colors
-$background-color: #f8f9fa;
-$foreground-color: #343a40;
+$background-color: var(--background-color);
+$foreground-color: var(--foreground-color);
 $primary-color: #007bff;
 $secondary-color: #6c757d;
 $success-color: #28a745;
@@ -38,14 +38,6 @@ $grid-columns-sm: 4;
 $grid-columns-md: 8;
 $grid-columns-lg: 12;
 
-// Z-index
-$z-index-dropdown: 1000;
-$z-index-sticky: 1020;
-$z-index-fixed: 1030;
-$z-index-modal-backdrop: 1040;
-$z-index-modal: 1050;
-$z-index-popover: 1060;
-$z-index-tooltip: 1070;
 
 // Transition duration
 $transition-duration: var(--transition-duration);

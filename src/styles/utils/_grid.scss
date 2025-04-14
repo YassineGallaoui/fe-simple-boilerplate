@@ -200,8 +200,8 @@
       @media (min-width: $breakpoint-sm) {
         &:before {
           background: repeating-linear-gradient(to right,
-              rgba($primary-color, 0.1) 0,
-              rgba($primary-color, 0.1) calc((100% - $container-padding * 7) / 8),
+              rgba($primary-color, 0.2) 0,
+              rgba($primary-color, 0.2) calc((100% - $container-padding * 7) / 8),
               transparent calc((100% - $container-padding * 7) / 8),
               transparent calc((100% - $container-padding * 7) / 8 + $container-padding));
         }
@@ -211,8 +211,8 @@
       @media (min-width: $breakpoint-md) {
         &:before {
           background: repeating-linear-gradient(to right,
-              rgba($primary-color, 0.1) 0,
-              rgba($primary-color, 0.1) calc((100% - $container-padding * 11) / 12),
+              rgba($primary-color, 0.2) 0,
+              rgba($primary-color, 0.2) calc((100% - $container-padding * 11) / 12),
               transparent calc((100% - $container-padding * 11) / 12),
               transparent calc((100% - $container-padding * 11) / 12 + $container-padding));
         }

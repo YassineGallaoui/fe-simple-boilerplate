@@ -1,6 +1,8 @@
+import '../styles/common.scss';
 import { grid } from './helpers/grid';
 import { router } from './helpers/routing/router';
 import { stats } from './helpers/stats';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   router.init();

@@ -10,3 +10,15 @@
     text-align: right;
     align-self: center;
 }
+
+:root {
+    --background-color: #f8f8f8;
+    --foreground-color: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #171717;
+        --foreground-color: #f8f8f8;
+    }
+}

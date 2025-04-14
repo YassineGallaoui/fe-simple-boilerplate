@@ -31,6 +31,11 @@ ol {
   padding-left: $spacing-unit * 3;
 }
 
+a {
+  color: $foreground-color;
+  text-decoration: none;
+}
+
 // Images
 img {
   max-width: 100%;

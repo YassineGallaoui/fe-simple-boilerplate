@@ -3,9 +3,9 @@
 .stats {
   display: none;
   font-family: monospace;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  z-index: $z-index-tooltip;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  z-index: 2;
 
   &.show {
     position: fixed;
