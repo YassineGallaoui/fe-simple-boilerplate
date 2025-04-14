@@ -79,7 +79,7 @@
 // Responsive columns
 // sm (default) - 4 columns
 @for $i from 1 through $grid-columns-sm {
-  .col-sm-#{$i} {
+  .sm-col-#{$i} {
     grid-column-end: span $i;
   }
 }
@@ -87,7 +87,7 @@
 // md - 8 columns
 @media (min-width: $breakpoint-sm) {
   @for $i from 1 through $grid-columns-md {
-    .col-md-#{$i} {
+    .md-col-#{$i} {
       grid-column-end: span $i;
     }
   }
@@ -96,7 +96,7 @@
 // lg and up - 12 columns
 @media (min-width: $breakpoint-md) {
   @for $i from 1 through $grid-columns-lg {
-    .col-lg-#{$i} {
+    .lg-col-#{$i} {
       grid-column-end: span $i;
     }
   }
@@ -127,7 +127,7 @@
 // Responsive offset classes
 // sm (default) - 4 columns
 @for $i from 1 through $grid-columns-sm {
-  .offset-sm-#{$i} {
+  .sm-offset-#{$i} {
     grid-column-start: $i + 1;
   }
 }
@@ -135,7 +135,7 @@
 // md - 8 columns
 @media (min-width: $breakpoint-sm) {
   @for $i from 1 through $grid-columns-md {
-    .offset-md-#{$i} {
+    .md-offset-#{$i} {
       grid-column-start: $i + 1;
     }
   }
@@ -144,7 +144,7 @@
 // lg and up - 12 columns
 @media (min-width: $breakpoint-md) {
   @for $i from 1 through $grid-columns-lg {
-    .offset-lg-#{$i} {
+    .lg-offset-#{$i} {
       grid-column-start: $i + 1;
     }
   }
