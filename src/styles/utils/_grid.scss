@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 // =============================================================================
 // Grid System
@@ -78,14 +78,16 @@
 
 // Responsive columns
 // sm (default) - 4 columns
-@for $i from 1 through $grid-columns-sm {
-  .sm-col-#{$i} {
-    grid-column-end: span $i;
+@media (max-width: $breakpoint-sm) {
+  @for $i from 1 through $grid-columns-sm {
+    .sm-col-#{$i} {
+      grid-column-end: span $i;
+    }
   }
 }
 
 // md - 8 columns
-@media (min-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
   @for $i from 1 through $grid-columns-md {
     .md-col-#{$i} {
       grid-column-end: span $i;
@@ -126,14 +128,16 @@
 
 // Responsive offset classes
 // sm (default) - 4 columns
-@for $i from 1 through $grid-columns-sm {
-  .sm-offset-#{$i} {
-    grid-column-start: $i + 1;
+@media (max-width: $breakpoint-sm) {
+  @for $i from 1 through $grid-columns-sm {
+    .sm-offset-#{$i} {
+      grid-column-start: $i + 1;
+    }
   }
 }
 
 // md - 8 columns
-@media (min-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
   @for $i from 1 through $grid-columns-md {
     .md-offset-#{$i} {
       grid-column-start: $i + 1;
@@ -160,6 +164,37 @@
   grid-template-columns: subgrid;
 }
 
+// Responsive sub-grid classes
+// sm
+@media (max-width: $breakpoint-sm) {
+  .sm-sub-grid {
+    display: grid;
+    gap: $container-padding;
+    height: 100%;
+    grid-template-columns: subgrid;
+  }
+}
+
+// md
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+  .md-sub-grid {
+    display: grid;
+    gap: $container-padding;
+    height: 100%;
+    grid-template-columns: subgrid;
+  }
+}
+
+// lg
+@media (min-width: $breakpoint-md) {
+  .lg-sub-grid {
+    display: grid;
+    gap: $container-padding;
+    height: 100%;
+    grid-template-columns: subgrid;
+  }
+}
+
 // -----------------------------------------------------------------------------
 // Grid Overlay
 // -----------------------------------------------------------------------------
@@ -182,39 +217,49 @@
 
       // Default (sm) - 4 columns
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: repeating-linear-gradient(to right,
-            rgba($primary-color, 0.1) 0,
-            rgba($primary-color, 0.1) calc((100% - $container-padding * 3) / 4),
-            transparent calc((100% - $container-padding * 3) / 4),
-            transparent calc((100% - $container-padding * 3) / 4 + $container-padding));
+        background: repeating-linear-gradient(
+          to right,
+          rgba($primary-color, 0.1) 0,
+          rgba($primary-color, 0.1) calc((100% - $container-padding * 3) / 4),
+          transparent calc((100% - $container-padding * 3) / 4),
+          transparent
+            calc((100% - $container-padding * 3) / 4 + $container-padding)
+        );
         pointer-events: none;
       }
 
       // sm - 8 columns
       @media (min-width: $breakpoint-sm) {
         &:before {
-          background: repeating-linear-gradient(to right,
-              rgba($primary-color, 0.2) 0,
-              rgba($primary-color, 0.2) calc((100% - $container-padding * 7) / 8),
-              transparent calc((100% - $container-padding * 7) / 8),
-              transparent calc((100% - $container-padding * 7) / 8 + $container-padding));
+          background: repeating-linear-gradient(
+            to right,
+            rgba($primary-color, 0.2) 0,
+            rgba($primary-color, 0.2) calc((100% - $container-padding * 7) / 8),
+            transparent calc((100% - $container-padding * 7) / 8),
+            transparent
+              calc((100% - $container-padding * 7) / 8 + $container-padding)
+          );
         }
       }
 
       // md and up - 12 columns
       @media (min-width: $breakpoint-md) {
         &:before {
-          background: repeating-linear-gradient(to right,
-              rgba($primary-color, 0.2) 0,
-              rgba($primary-color, 0.2) calc((100% - $container-padding * 11) / 12),
-              transparent calc((100% - $container-padding * 11) / 12),
-              transparent calc((100% - $container-padding * 11) / 12 + $container-padding));
+          background: repeating-linear-gradient(
+            to right,
+            rgba($primary-color, 0.2) 0,
+            rgba($primary-color, 0.2)
+              calc((100% - $container-padding * 11) / 12),
+            transparent calc((100% - $container-padding * 11) / 12),
+            transparent
+              calc((100% - $container-padding * 11) / 12 + $container-padding)
+          );
         }
       }
     }

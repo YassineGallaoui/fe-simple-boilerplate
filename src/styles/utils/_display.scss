@@ -1,0 +1,24 @@
+@use "./variables";
+
+// Define display properties
+$displays:
+  block, inline, inline-block, flex, inline-flex, grid, inline-grid, table,
+  table-row, table-cell, none;
+
+// Generate base display classes
+@each $display in $displays {
+  .d-#{$display} {
+    display: #{$display} !important;
+  }
+}
+
+// Generate responsive display classes
+@each $breakpoint, $bp in variables.$breakpoints {
+  @media (min-width: #{$bp}) {
+    @each $display in $displays {
+      .#{$breakpoint}-d-#{$display} {
+        display: #{$display} !important;
+      }
+    }
+  }
+}

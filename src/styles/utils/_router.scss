@@ -1,26 +1,26 @@
 .page-container {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    transition: all 0.5s ease-in-out;
-    opacity: 1;
-    transform: translateY(0);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #current-content {
-    z-index: 1;
+  z-index: 1;
 }
 
 #new-content {
-    z-index: 2;
+  z-index: 2;
 }
 
 .page-exit {
-    opacity: 0;
-    transform: translateY(-20px);
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 .page-enter {
-    opacity: 0;
-    transform: translateY(20px);
+  opacity: 0;
+  transform: translateY(20px);
 }

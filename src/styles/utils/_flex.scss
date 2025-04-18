@@ -1,123 +1,120 @@
-@use './variables';
+@use "./variables";
 
 // ==========================================================================
 // FLEXBOX PROPERTY MAPS
 // ==========================================================================
 
 $flex-directions: (
-    'row': row,
-    'row-reverse': row-reverse,
-    'col': column,
-    'col-reverse': column-reverse
+  "row": row,
+  "row-reverse": row-reverse,
+  "col": column,
+  "col-reverse": column-reverse,
 );
 
 $flex-wraps: (
-    'wrap': wrap,
-    'wrap-reverse': wrap-reverse,
-    'nowrap': nowrap
+  "wrap": wrap,
+  "wrap-reverse": wrap-reverse,
+  "nowrap": nowrap,
 );
 
 $justify-content: (
-    'start': flex-start,
-    'center': center,
-    'end': flex-end,
-    'between': space-between,
-    'around': space-around,
-    'evenly': space-evenly
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
 );
 
 $align-items: (
-    'start': flex-start,
-    'center': center,
-    'end': flex-end,
-    'stretch': stretch,
-    'baseline': baseline
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "stretch": stretch,
+  "baseline": baseline,
 );
 
 $align-content: (
-    'start': flex-start,
-    'center': center,
-    'end': flex-end,
-    'stretch': stretch,
-    'between': space-between,
-    'around': space-around
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "stretch": stretch,
+  "between": space-between,
+  "around": space-around,
 );
-
 
 // ==========================================================================
 // FLEXBOX UTILITIES (Non-Responsive)
 // ==========================================================================
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 @each $key, $value in $flex-directions {
-    .flex-#{$key} {
-        flex-direction: $value;
-    }
+  .flex-#{$key} {
+    flex-direction: $value;
+  }
 }
 
 @each $key, $value in $flex-wraps {
-    .flex-#{$key} {
-        flex-wrap: $value;
-    }
+  .flex-#{$key} {
+    flex-wrap: $value;
+  }
 }
 
 @each $key, $value in $justify-content {
-    .flex-justify-content-#{$key} {
-        justify-content: $value;
-    }
+  .flex-justify-content-#{$key} {
+    justify-content: $value;
+  }
 }
 
 @each $key, $value in $align-items {
-    .flex-align-items-#{$key} {
-        align-items: $value;
-    }
+  .flex-align-items-#{$key} {
+    align-items: $value;
+  }
 }
 
 @each $key, $value in $align-content {
-    .flex-align-content-#{$key} {
-        align-content: $value;
-    }
+  .flex-align-content-#{$key} {
+    align-content: $value;
+  }
 }
-
 
 // ==========================================================================
 // FLEXBOX UTILITIES (Responsive)
 // ==========================================================================
 
 @each $breakpoint, $bp-value in variables.$breakpoints {
-    @media (min-width: $bp-value) {
-
-        @each $key, $value in $flex-directions {
-            .#{$breakpoint}-flex-#{$key} {
-                flex-direction: $value;
-            }
-        }
-
-        @each $key, $value in $flex-wraps {
-            .#{$breakpoint}-flex-#{$key} {
-                flex-wrap: $value;
-            }
-        }
-
-        @each $key, $value in $justify-content {
-            .#{$breakpoint}-flex-justify-content-#{$key} {
-                justify-content: $value;
-            }
-        }
-
-        @each $key, $value in $align-items {
-            .#{$breakpoint}-flex-align-items-#{$key} {
-                align-items: $value;
-            }
-        }
-
-        @each $key, $value in $align-content {
-            .#{$breakpoint}-flex-align-content-#{$key} {
-                align-content: $value;
-            }
-        }
+  @media (min-width: $bp-value) {
+    @each $key, $value in $flex-directions {
+      .#{$breakpoint}-flex-#{$key} {
+        flex-direction: $value;
+      }
     }
+
+    @each $key, $value in $flex-wraps {
+      .#{$breakpoint}-flex-#{$key} {
+        flex-wrap: $value;
+      }
+    }
+
+    @each $key, $value in $justify-content {
+      .#{$breakpoint}-flex-justify-content-#{$key} {
+        justify-content: $value;
+      }
+    }
+
+    @each $key, $value in $align-items {
+      .#{$breakpoint}-flex-align-items-#{$key} {
+        align-items: $value;
+      }
+    }
+
+    @each $key, $value in $align-content {
+      .#{$breakpoint}-flex-align-content-#{$key} {
+        align-content: $value;
+      }
+    }
+  }
 }
