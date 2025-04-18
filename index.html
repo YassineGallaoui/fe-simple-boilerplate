@@ -13,9 +13,11 @@
   <main class="container">
     <div class="row">
       <h1 class="sm-col-4 md-col-6 lg-col-10">Welcome to Homepage</h1>
-      <a class="sm-col-4 md-col-2 lg-col-2 navbarLink fs-2xl" href="./page2.html">
-        Go to About
-      </a>
+      <div class="sm-col-4 md-col-2 lg-col-2 flex flex-row flex-justify-content-end flex-align-items-center">
+        <a class="navbarLink fs-2xl" href="./page2.html">
+          Go to Page 2
+        </a>
+      </div>
     </div>
 
     <div class="row mt-16">
@@ -56,12 +58,16 @@
         <h2 class="fs-2xl">Content</h2>
         This boilerplate has:
         <ul>
-          <li>vanilla approach: html, (s)css, js + vite</li>
-          <li>custom grid system made from scratch, customizable via css variables</li>
+          <li>vanilla approach: html, (s)css, js</li>
+          <li>vite for building</li>
+          <li>eslint for linting</li>
+          <li>prettier for formatting</li>
+          <li>husky for git hooks</li>
+          <li>custom grid system (from scratch)</li>
           <li>basic custom routing</li>
         </ul>
       </div>
-      <div class="sm-col-4 md-col-3 lg-col-3">
+      <div class="sm-col-4 md-col-3 lg-col-4">
         <h2 class="fs-2xl">Test</h2>
         <ul>
           <li>Press "g" to toggle the grid</li>

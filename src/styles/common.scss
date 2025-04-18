@@ -29,4 +29,25 @@
 .navbarLink {
     text-align: right;
     align-self: center;
+    font-style: italic;
+
+    &::before {
+        content: '↦';
+        position: relative;
+        display: flex;
+        width: 0;
+        height: 0;
+        right: 2.2rem;
+        top: 0;
+        opacity: 0;
+        transform: translateX(calc(-100% - 1rem));
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+            transform: translateX(calc(-100%));
+        }
+    }
 }
