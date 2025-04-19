@@ -15,7 +15,7 @@ $positions: static, relative, absolute, fixed, sticky;
 
 // Generate responsive position classes
 // sm: 0 - 576px
-@media (max-width: #{variables.$breakpoint-sm - 1px}) {
+@media (max-width: #{variables.$breakpoint-sm}) {
   @each $position in $positions {
     .sm-position-#{$position} {
       position: #{$position} !important;
@@ -23,8 +23,7 @@ $positions: static, relative, absolute, fixed, sticky;
   }
 }
 
-// md: 577px - 768px
-@media (min-width: #{variables.$breakpoint-sm}) and (max-width: #{variables.$breakpoint-md - 1px}) {
+@media (min-width: #{variables.$breakpoint-sm}) and (max-width: #{variables.$breakpoint-md}) {
   @each $position in $positions {
     .md-position-#{$position} {
       position: #{$position} !important;

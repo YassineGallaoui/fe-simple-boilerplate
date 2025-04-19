@@ -1,4 +1,5 @@
 @use "./variables";
+@use "sass:map";
 
 // ==========================================================================
 // TEXT VARIABLES
@@ -182,34 +183,95 @@ $text-alignments: (
 // Responsive Utility Classes
 // ==========================================================================
 
-@each $breakpoint, $value in variables.$breakpoints {
-  @media (min-width: $value) {
-    // Responsive Text Sizes
-    @each $size, $size-value in $font-sizes {
-      .#{$breakpoint}-fs-#{$size} {
-        font-size: $size-value;
-      }
+// SM Breakpoint: Applies *under* sm (max-width: sm - 0.02px)
+@media (max-width: #{map.get(variables.$breakpoints, "sm") - 0.02px}) {
+  // Responsive Text Sizes
+  @each $size, $size-value in $font-sizes {
+    .sm-fs-#{$size} {
+      font-size: $size-value;
     }
+  }
 
-    // Responsive Text Alignment
-    @each $alignment, $align-value in $text-alignments {
-      .#{$breakpoint}-text-align-#{$alignment} {
-        text-align: $align-value;
-      }
+  // Responsive Text Alignment
+  @each $alignment, $align-value in $text-alignments {
+    .sm-text-align-#{$alignment} {
+      text-align: $align-value;
     }
+  }
 
-    // Responsive Font Weights
-    @each $weight, $weight-value in $font-weights {
-      .#{$breakpoint}-font-weight-#{$weight} {
-        font-weight: $weight-value;
-      }
+  // Responsive Font Weights
+  @each $weight, $weight-value in $font-weights {
+    .sm-font-weight-#{$weight} {
+      font-weight: $weight-value;
     }
+  }
 
-    // Responsive Letter Spacing
-    @each $spacing, $spacing-value in $letter-spacing {
-      .#{$breakpoint}-letter-spacing-#{$spacing} {
-        letter-spacing: $spacing-value;
-      }
+  // Responsive Letter Spacing
+  @each $spacing, $spacing-value in $letter-spacing {
+    .sm-letter-spacing-#{$spacing} {
+      letter-spacing: $spacing-value;
+    }
+  }
+}
+
+// MD Breakpoint: Applies *between* sm and md (min-width: sm and max-width: md - 0.02px)
+@media (min-width: #{map.get(variables.$breakpoints, "sm")}) and (max-width: #{map.get(variables.$breakpoints, "md") - 0.02px}) {
+  // Responsive Text Sizes
+  @each $size, $size-value in $font-sizes {
+    .md-fs-#{$size} {
+      font-size: $size-value;
+    }
+  }
+
+  // Responsive Text Alignment
+  @each $alignment, $align-value in $text-alignments {
+    .md-text-align-#{$alignment} {
+      text-align: $align-value;
+    }
+  }
+
+  // Responsive Font Weights
+  @each $weight, $weight-value in $font-weights {
+    .md-font-weight-#{$weight} {
+      font-weight: $weight-value;
+    }
+  }
+
+  // Responsive Letter Spacing
+  @each $spacing, $spacing-value in $letter-spacing {
+    .md-letter-spacing-#{$spacing} {
+      letter-spacing: $spacing-value;
+    }
+  }
+}
+
+// LG+ Breakpoint: Applies *over* md (min-width: md)
+@media (min-width: #{map.get(variables.$breakpoints, "md")}) {
+  // Responsive Text Sizes
+  @each $size, $size-value in $font-sizes {
+    .lg-fs-#{$size} {
+      font-size: $size-value;
+    }
+  }
+
+  // Responsive Text Alignment
+  @each $alignment, $align-value in $text-alignments {
+    .lg-text-align-#{$alignment} {
+      text-align: $align-value;
+    }
+  }
+
+  // Responsive Font Weights
+  @each $weight, $weight-value in $font-weights {
+    .lg-font-weight-#{$weight} {
+      font-weight: $weight-value;
+    }
+  }
+
+  // Responsive Letter Spacing
+  @each $spacing, $spacing-value in $letter-spacing {
+    .lg-letter-spacing-#{$spacing} {
+      letter-spacing: $spacing-value;
     }
   }
 }
