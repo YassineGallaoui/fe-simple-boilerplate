@@ -21,8 +21,8 @@ body {
   position: relative;
   font-family: $font-family-base;
   line-height: $line-height-base;
-  color: $foreground-color;
-  background-color: $background-color;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
 
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ ol {
 }
 
 a {
-  color: $foreground-color;
+  color: var(--foreground-color);
   text-decoration: none;
 }
 

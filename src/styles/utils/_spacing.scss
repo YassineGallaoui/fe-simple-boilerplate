@@ -158,91 +158,266 @@ $spacing-scale: (
 // SPACING UTILITIES (Responsive)
 // ==========================================================================
 
-@each $breakpoint, $bp-value in variables.$breakpoints {
-  @media (min-width: $bp-value) {
-    @each $key, $value in $spacing-scale {
-      // Responsive Inset
-      .#{$breakpoint}-inset-#{$key} {
-        inset: $value !important;
-      }
+// SM Breakpoint: Applies up to sm breakpoint
+@media (max-width: variables.$breakpoint-sm) {
+  @each $key, $value in $spacing-scale {
+    // Responsive Inset
+    .sm-inset-#{$key} {
+      inset: $value !important;
+    }
 
-      .#{$breakpoint}-t-#{$key} {
-        top: $value !important;
-      }
+    .sm-t-#{$key} {
+      top: $value !important;
+    }
 
-      .#{$breakpoint}-r-#{$key} {
-        right: $value !important;
-      }
+    .sm-r-#{$key} {
+      right: $value !important;
+    }
 
-      .#{$breakpoint}-b-#{$key} {
-        bottom: $value !important;
-      }
+    .sm-b-#{$key} {
+      bottom: $value !important;
+    }
 
-      .#{$breakpoint}-l-#{$key} {
-        left: $value !important;
-      }
+    .sm-l-#{$key} {
+      left: $value !important;
+    }
 
-      // Responsive Margins
-      .#{$breakpoint}-m-#{$key} {
-        margin: $value !important;
-      }
+    // Responsive Margins
+    .sm-m-#{$key} {
+      margin: $value !important;
+    }
 
-      .#{$breakpoint}-mt-#{$key} {
-        margin-top: $value !important;
-      }
+    .sm-mt-#{$key} {
+      margin-top: $value !important;
+    }
 
-      .#{$breakpoint}-mr-#{$key} {
-        margin-right: $value !important;
-      }
+    .sm-mr-#{$key} {
+      margin-right: $value !important;
+    }
 
-      .#{$breakpoint}-mb-#{$key} {
-        margin-bottom: $value !important;
-      }
+    .sm-mb-#{$key} {
+      margin-bottom: $value !important;
+    }
 
-      .#{$breakpoint}-ml-#{$key} {
-        margin-left: $value !important;
-      }
+    .sm-ml-#{$key} {
+      margin-left: $value !important;
+    }
 
-      .#{$breakpoint}-mx-#{$key} {
-        margin-left: $value !important;
-        margin-right: $value !important;
-      }
+    .sm-mx-#{$key} {
+      margin-left: $value !important;
+      margin-right: $value !important;
+    }
 
-      .#{$breakpoint}-my-#{$key} {
-        margin-top: $value !important;
-        margin-bottom: $value !important;
-      }
+    .sm-my-#{$key} {
+      margin-top: $value !important;
+      margin-bottom: $value !important;
+    }
 
-      // Responsive Paddings
-      .#{$breakpoint}-p-#{$key} {
-        padding: $value !important;
-      }
+    // Responsive Paddings
+    .sm-p-#{$key} {
+      padding: $value !important;
+    }
 
-      .#{$breakpoint}-pt-#{$key} {
-        padding-top: $value !important;
-      }
+    .sm-pt-#{$key} {
+      padding-top: $value !important;
+    }
 
-      .#{$breakpoint}-pr-#{$key} {
-        padding-right: $value !important;
-      }
+    .sm-pr-#{$key} {
+      padding-right: $value !important;
+    }
 
-      .#{$breakpoint}-pb-#{$key} {
-        padding-bottom: $value !important;
-      }
+    .sm-pb-#{$key} {
+      padding-bottom: $value !important;
+    }
 
-      .#{$breakpoint}-pl-#{$key} {
-        padding-left: $value !important;
-      }
+    .sm-pl-#{$key} {
+      padding-left: $value !important;
+    }
 
-      .#{$breakpoint}-px-#{$key} {
-        padding-left: $value !important;
-        padding-right: $value !important;
-      }
+    .sm-px-#{$key} {
+      padding-left: $value !important;
+      padding-right: $value !important;
+    }
 
-      .#{$breakpoint}-py-#{$key} {
-        padding-top: $value !important;
-        padding-bottom: $value !important;
-      }
+    .sm-py-#{$key} {
+      padding-top: $value !important;
+      padding-bottom: $value !important;
+    }
+  }
+}
+
+// MD Breakpoint: Applies between sm and md breakpoints
+@media (min-width: variables.$breakpoint-sm) and (max-width: variables.$breakpoint-md) {
+  @each $key, $value in $spacing-scale {
+    // Responsive Inset
+    .md-inset-#{$key} {
+      inset: $value !important;
+    }
+
+    .md-t-#{$key} {
+      top: $value !important;
+    }
+
+    .md-r-#{$key} {
+      right: $value !important;
+    }
+
+    .md-b-#{$key} {
+      bottom: $value !important;
+    }
+
+    .md-l-#{$key} {
+      left: $value !important;
+    }
+
+    // Responsive Margins
+    .md-m-#{$key} {
+      margin: $value !important;
+    }
+
+    .md-mt-#{$key} {
+      margin-top: $value !important;
+    }
+
+    .md-mr-#{$key} {
+      margin-right: $value !important;
+    }
+
+    .md-mb-#{$key} {
+      margin-bottom: $value !important;
+    }
+
+    .md-ml-#{$key} {
+      margin-left: $value !important;
+    }
+
+    .md-mx-#{$key} {
+      margin-left: $value !important;
+      margin-right: $value !important;
+    }
+
+    .md-my-#{$key} {
+      margin-top: $value !important;
+      margin-bottom: $value !important;
+    }
+
+    // Responsive Paddings
+    .md-p-#{$key} {
+      padding: $value !important;
+    }
+
+    .md-pt-#{$key} {
+      padding-top: $value !important;
+    }
+
+    .md-pr-#{$key} {
+      padding-right: $value !important;
+    }
+
+    .md-pb-#{$key} {
+      padding-bottom: $value !important;
+    }
+
+    .md-pl-#{$key} {
+      padding-left: $value !important;
+    }
+
+    .md-px-#{$key} {
+      padding-left: $value !important;
+      padding-right: $value !important;
+    }
+
+    .md-py-#{$key} {
+      padding-top: $value !important;
+      padding-bottom: $value !important;
+    }
+  }
+}
+
+// LG Breakpoint: Applies up to lg breakpoint
+@media (max-width: variables.$breakpoint-lg) {
+  @each $key, $value in $spacing-scale {
+    // Responsive Inset
+    .lg-inset-#{$key} {
+      inset: $value !important;
+    }
+
+    .lg-t-#{$key} {
+      top: $value !important;
+    }
+
+    .lg-r-#{$key} {
+      right: $value !important;
+    }
+
+    .lg-b-#{$key} {
+      bottom: $value !important;
+    }
+
+    .lg-l-#{$key} {
+      left: $value !important;
+    }
+
+    // Responsive Margins
+    .lg-m-#{$key} {
+      margin: $value !important;
+    }
+
+    .lg-mt-#{$key} {
+      margin-top: $value !important;
+    }
+
+    .lg-mr-#{$key} {
+      margin-right: $value !important;
+    }
+
+    .lg-mb-#{$key} {
+      margin-bottom: $value !important;
+    }
+
+    .lg-ml-#{$key} {
+      margin-left: $value !important;
+    }
+
+    .lg-mx-#{$key} {
+      margin-left: $value !important;
+      margin-right: $value !important;
+    }
+
+    .lg-my-#{$key} {
+      margin-top: $value !important;
+      margin-bottom: $value !important;
+    }
+
+    // Responsive Paddings
+    .lg-p-#{$key} {
+      padding: $value !important;
+    }
+
+    .lg-pt-#{$key} {
+      padding-top: $value !important;
+    }
+
+    .lg-pr-#{$key} {
+      padding-right: $value !important;
+    }
+
+    .lg-pb-#{$key} {
+      padding-bottom: $value !important;
+    }
+
+    .lg-pl-#{$key} {
+      padding-left: $value !important;
+    }
+
+    .lg-px-#{$key} {
+      padding-left: $value !important;
+      padding-right: $value !important;
+    }
+
+    .lg-py-#{$key} {
+      padding-top: $value !important;
+      padding-bottom: $value !important;
     }
   }
 }

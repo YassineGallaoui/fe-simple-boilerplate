@@ -1,11 +1,13 @@
-@use './utils/variables';
-@use './utils/base';
-@use './utils/grid';
-@use './utils/flex';
-@use './utils/stats';
-@use './utils/text';
-@use './utils/spacing';
-@use './utils/router';
+@use "./utils/variables";
+@use "./utils/base";
+@use "./utils/grid";
+@use "./utils/flex";
+@use "./utils/stats";
+@use "./utils/text";
+@use "./utils/spacing";
+@use "./utils/router";
+@use "./utils/display";
+@use "./utils/position";
 
 @media (prefers-color-scheme: dark) {
     html {
@@ -14,15 +16,17 @@
 }
 
 :root {
-    --background-color: #f8f8f8;
-    --foreground-color: #171717;
+    --background-color: #B9BAA3;
+    --foreground-color: #0A100D;
+    --accent-color: #3066BE;
     --transition-duration: 0.3s;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #171717;
-        --foreground-color: #f8f8f8;
+        --background-color: #0A100D;
+        --foreground-color: #B9BAA3;
+        --accent-color: #3066BE;
     }
 }
 
