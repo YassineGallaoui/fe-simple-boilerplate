@@ -1,8 +1,7 @@
 @use "./variables";
 
 // Define display properties
-$displays:
-  block, inline, inline-block, flex, inline-flex, grid, inline-grid, table,
+$displays: block, inline, inline-block, flex, inline-flex, grid, inline-grid, table,
   table-row, table-cell, none;
 
 // Generate base display classes

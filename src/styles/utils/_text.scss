@@ -6,8 +6,7 @@
 // ==========================================================================
 
 // Font Families
-$font-primary:
-  "Inter",
+$font-primary: "Inter",
   -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",
@@ -185,6 +184,7 @@ $text-alignments: (
 
 // SM Breakpoint: Applies *under* sm (max-width: sm - 0.02px)
 @media (max-width: #{map.get(variables.$breakpoints, "sm") - 0.02px}) {
+
   // Responsive Text Sizes
   @each $size, $size-value in $font-sizes {
     .sm-fs-#{$size} {
@@ -216,6 +216,7 @@ $text-alignments: (
 
 // MD Breakpoint: Applies *between* sm and md (min-width: sm and max-width: md - 0.02px)
 @media (min-width: #{map.get(variables.$breakpoints, "sm")}) and (max-width: #{map.get(variables.$breakpoints, "md") - 0.02px}) {
+
   // Responsive Text Sizes
   @each $size, $size-value in $font-sizes {
     .md-fs-#{$size} {
@@ -247,6 +248,7 @@ $text-alignments: (
 
 // LG+ Breakpoint: Applies *over* md (min-width: md)
 @media (min-width: #{map.get(variables.$breakpoints, "md")}) {
+
   // Responsive Text Sizes
   @each $size, $size-value in $font-sizes {
     .lg-fs-#{$size} {

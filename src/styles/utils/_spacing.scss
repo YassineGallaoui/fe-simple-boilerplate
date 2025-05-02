@@ -62,14 +62,32 @@ $spacing-scale: (
   // 144px
   "80": variables.$spacing-unit * 20,
   // 160px
-  "96": variables.$spacing-unit * 24, // 192px
+  "96": variables.$spacing-unit * 24,
+  // 192px
 );
 
 // ==========================================================================
 // SPACING UTILITIES (Non-Responsive)
 // ==========================================================================
 
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
 @each $key, $value in $spacing-scale {
+
   // Inset
   .inset-#{$key} {
     inset: $value !important;
@@ -160,7 +178,24 @@ $spacing-scale: (
 
 // SM Breakpoint: Applies up to sm breakpoint
 @media (max-width: variables.$breakpoint-sm) {
+  .sm-mt-auto {
+    margin-top: auto;
+  }
+
+  .sm-mb-auto {
+    margin-bottom: auto;
+  }
+
+  .sm-mr-auto {
+    margin-right: auto;
+  }
+
+  .sm-ml-auto {
+    margin-left: auto;
+  }
+
   @each $key, $value in $spacing-scale {
+
     // Responsive Inset
     .sm-inset-#{$key} {
       inset: $value !important;
@@ -248,7 +283,24 @@ $spacing-scale: (
 
 // MD Breakpoint: Applies between sm and md breakpoints
 @media (min-width: variables.$breakpoint-sm) and (max-width: variables.$breakpoint-md) {
+  .md-mt-auto {
+    margin-top: auto;
+  }
+
+  .md-mb-auto {
+    margin-bottom: auto;
+  }
+
+  .md-mr-auto {
+    margin-right: auto;
+  }
+
+  .md-ml-auto {
+    margin-left: auto;
+  }
+
   @each $key, $value in $spacing-scale {
+
     // Responsive Inset
     .md-inset-#{$key} {
       inset: $value !important;
@@ -335,8 +387,25 @@ $spacing-scale: (
 }
 
 // LG Breakpoint: Applies up to lg breakpoint
-@media (max-width: variables.$breakpoint-lg) {
+@media (min-width: variables.$breakpoint-md) {
+  .lg-mt-auto {
+    margin-top: auto;
+  }
+
+  .lg-mb-auto {
+    margin-bottom: auto;
+  }
+
+  .lg-mr-auto {
+    margin-right: auto;
+  }
+
+  .lg-ml-auto {
+    margin-left: auto;
+  }
+
   @each $key, $value in $spacing-scale {
+
     // Responsive Inset
     .lg-inset-#{$key} {
       inset: $value !important;

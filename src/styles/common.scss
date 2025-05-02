@@ -16,42 +16,25 @@
 }
 
 :root {
-    --background-color: #B9BAA3;
-    --foreground-color: #0A100D;
-    --accent-color: #3066BE;
+    --background-color: #ebecd6;
+    --foreground-color: #0a100d;
+    --accent-light-color: #7ba9f4;
+    --accent-color: #3066be;
+    --accent-dark-color: #0e4193;
     --transition-duration: 0.3s;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #0A100D;
-        --foreground-color: #B9BAA3;
-        --accent-color: #3066BE;
+        --background-color: #0a100d;
+        --foreground-color: #ebecd6;
+        --accent-light-color: #7ba9f4;
+        --accent-color: #3066be;
+        --accent-dark-color: #0e4193;
     }
 }
 
 .navbarLink {
     text-align: right;
     align-self: center;
-    font-style: italic;
-
-    &::before {
-        content: '↦';
-        position: relative;
-        display: flex;
-        width: 0;
-        height: 0;
-        right: 2.2rem;
-        top: 0;
-        opacity: 0;
-        transform: translateX(calc(-100% - 1rem));
-        transition: all 0.3s ease-in-out;
-    }
-
-    &:hover {
-        &::before {
-            opacity: 1;
-            transform: translateX(calc(-100%));
-        }
-    }
 }
