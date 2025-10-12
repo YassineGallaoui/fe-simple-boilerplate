@@ -9,10 +9,12 @@ const authMessage = document.getElementById('authMessage');
 
 // Tab switching functionality
 loginTab.addEventListener('click', () => {
+  console.log("Login tab clicked");
   showLogin();
 });
 
 signupTab.addEventListener('click', () => {
+  console.log("Signup tab clicked");
   showSignup();
 });
 
