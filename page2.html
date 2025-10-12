@@ -11,10 +11,28 @@
 <body>
   <main class="container">
     <div class="row">
-      <h1 class="sm-col-4 md-col-7 lg-col-9">Welcome to Page 2</h1>
-      <div class="sm-col-4 md-col-1 lg-col-3 flex flex-row flex-justify-content-end flex-align-items-center">
-        <a class="navbarLink fs-2xl" href="./index.html">Go to Homepage</a>
+      <h1 class="sm-col-4 md-col-4 lg-col-8">
+        <a href="./page2.html">
+          Page 2
+        </a>
+      </h1>
+      <div class="sm-col-4 md-col-4 lg-col-4 flex row jc-end ai-center">
+        <div id="authStatus" class="auth-status">
+          <!-- Will be populated by JavaScript -->
+        </div>
+        <div>
+          <a class="navbarLink fs-lg ml-2" href="./homepage.html">
+            Homepage
+          </a>
+          <a class="navbarLink fs-lg ml-2" href="./authentication.html">
+            Authentication
+          </a>
+        </div>
       </div>
+    </div>
+
+    <div class="row mt-4">
+      <h2 class="sm-col-4 md-col-4 lg-col-8">this is page 2</h2>
     </div>
   </main>
   <script type="module" src="/src/js/common.js"></script>

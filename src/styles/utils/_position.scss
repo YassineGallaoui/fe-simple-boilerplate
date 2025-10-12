@@ -9,33 +9,17 @@ $positions: static, relative, absolute, fixed, sticky;
 // Generate non-responsive position classes
 @each $position in $positions {
   .position-#{$position} {
-    position: #{$position} !important;
+    position: #{$position};
   }
 }
 
 // Generate responsive position classes
-// sm: 0 - 576px
-@media (max-width: #{variables.$breakpoint-sm}) {
-  @each $position in $positions {
-    .sm-position-#{$position} {
-      position: #{$position} !important;
-    }
-  }
-}
-
-@media (min-width: #{variables.$breakpoint-sm}) and (max-width: #{variables.$breakpoint-md}) {
-  @each $position in $positions {
-    .md-position-#{$position} {
-      position: #{$position} !important;
-    }
-  }
-}
-
-// lg: 769px - 992px
-@media (min-width: #{variables.$breakpoint-md}) {
-  @each $position in $positions {
-    .lg-position-#{$position} {
-      position: #{$position} !important;
+@each $breakpoint, $bp-value in variables.$breakpoints {
+  @media (min-width: $bp-value) {
+    @each $key, $value in $positions {
+      .#{$breakpoint}-#{$key} {
+        flex-direction: $value;
+      }
     }
   }
 }

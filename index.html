@@ -12,15 +12,25 @@
 <body>
   <main class="container">
     <div class="row">
-      <h1 class="sm-col-4 md-col-6 lg-col-10">Welcome to Homepage</h1>
-      <div class="sm-col-4 md-col-2 lg-col-2 flex flex-row flex-justify-content-end flex-align-items-center">
-        <a class="navbarLink fs-2xl" href="./page2.html">
-          Go to Page 2
-        </a>
+      <h1 class="sm-col-4 md-col-4 lg-col-8">
+        Homepage
+      </h1>
+      <div class="sm-col-4 md-col-4 lg-col-4 flex row jc-end ai-center">
+        <div id="authStatus" class="auth-status">
+          <!-- Will be populated by JavaScript -->
+        </div>
+        <div>
+          <a class="navbarLink fs-lg ml-2" href="./authentication.html">
+            Authentication
+          </a>
+          <a class="navbarLink fs-lg ml-2" href="./page2.html">
+            Page 2
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="row mt-16">
+    <div class="row mt-12">
       <div class="bg-green sm-col-3 md-col-2 lg-col-4">takes 4 cols on large desktop, 2 on tablet and 3
         on mobile</div>
       <div class="bg-yellow sm-col-1 md-col-3 lg-col-3">takes 3 cols on large desktop, 3 on tablet and
@@ -29,7 +39,7 @@
         on mobile</div>
     </div>
 
-    <div class="row mt-8">
+    <div class="row mt-2">
       <div class="bg-blue sub-grid sm-col-4 md-col-6 lg-col-8">
         <div class="sm-col-4 md-col-6 lg-col-8">
           Container which takes 8 cols on large desktop, 6 on tablet and 4 on mobile...
@@ -41,7 +51,7 @@
       </div>
     </div>
 
-    <div class="row mt-8">
+    <div class="row mt-2">
       <div class="bg-blue sub-grid sm-col-3 md-col-6 lg-col-8 sm-offset-1 md-offset-2 lg-offset-3">
         <div class="sm-col-4 md-col-6 lg-col-8">
           Container with offset: pushed 3 cols on large desktop, 2 on tablet and 1 on mobile...
@@ -53,7 +63,7 @@
       </div>
     </div>
 
-    <div class="row mt-32">
+    <div class="row mt-8">
       <div class="sm-col-4 md-col-5 lg-col-8">
         <h2 class="fs-2xl">Content</h2>
         This boilerplate has:

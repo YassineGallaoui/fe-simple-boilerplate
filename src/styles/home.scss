@@ -1,0 +1,76 @@
+// Home page specific styles
+
+.auth-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-greeting {
+  color: var(--foreground-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.logout-btn {
+  background: var(--accent-color);
+  color: var(--background-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background var(--transition-duration) ease;
+}
+
+.logout-btn:hover {
+  background: var(--accent-dark-color);
+}
+
+.login-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+  transition: all var(--transition-duration) ease;
+}
+
+.login-link:hover {
+  background: var(--accent-color);
+  color: var(--background-color);
+}
+
+.logout-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .logout-message {
+    background: #1e4d2b;
+    color: #a3d9a5;
+    border-color: #2d7738;
+  }
+}

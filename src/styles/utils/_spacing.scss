@@ -4,66 +4,32 @@
 // SPACING SCALE MAP
 // ==========================================================================
 // Uses variables.$spacing-unit (e.g., 8px) as the base
+// Each number corresponds to the multiplier: "1" = 1 * 8px = 8px, "2" = 2 * 8px = 16px, etc.
 $spacing-scale: (
-  "0": 0,
-  "1": variables.$spacing-unit * 0.25,
-  // 2px
-  "2": variables.$spacing-unit * 0.5,
-  // 4px
-  "3": variables.$spacing-unit * 0.75,
-  // 6px
-  "4": variables.$spacing-unit * 1,
-  // 8px
-  "5": variables.$spacing-unit * 1.25,
-  // 10px
-  "6": variables.$spacing-unit * 1.5,
-  // 12px
-  "7": variables.$spacing-unit * 1.75,
-  // 14px
-  "8": variables.$spacing-unit * 2,
-  // 16px
-  "9": variables.$spacing-unit * 2.25,
-  // 18px
-  "10": variables.$spacing-unit * 2.5,
-  // 20px
-  "11": variables.$spacing-unit * 2.75,
-  // 22px
-  "12": variables.$spacing-unit * 3,
-  // 24px
-  "14": variables.$spacing-unit * 3.5,
-  // 28px
-  "16": variables.$spacing-unit * 4,
-  // 32px
-  "20": variables.$spacing-unit * 5,
-  // 40px
-  "24": variables.$spacing-unit * 6,
-  // 48px
-  "28": variables.$spacing-unit * 7,
-  // 56px
-  "32": variables.$spacing-unit * 8,
-  // 64px
-  "36": variables.$spacing-unit * 9,
-  // 72px
-  "40": variables.$spacing-unit * 10,
-  // 80px
-  "44": variables.$spacing-unit * 11,
-  // 88px
-  "48": variables.$spacing-unit * 12,
-  // 96px
-  "52": variables.$spacing-unit * 13,
-  // 104px
-  "56": variables.$spacing-unit * 14,
-  // 112px
-  "60": variables.$spacing-unit * 15,
-  // 120px
-  "64": variables.$spacing-unit * 16,
-  // 128px
-  "72": variables.$spacing-unit * 18,
-  // 144px
-  "80": variables.$spacing-unit * 20,
-  // 160px
-  "96": variables.$spacing-unit * 24,
-  // 192px
+  "0": 0,                                    // 0px
+  "025": variables.$spacing-unit * 0.25,     // 2px
+  "050": variables.$spacing-unit * 0.50,     // 4px
+  "075": variables.$spacing-unit * 0.75,     // 6px
+  "1": variables.$spacing-unit * 1,          // 8px
+  "2": variables.$spacing-unit * 2,          // 16px
+  "3": variables.$spacing-unit * 3,          // 24px
+  "4": variables.$spacing-unit * 4,          // 32px
+  "5": variables.$spacing-unit * 5,          // 40px
+  "6": variables.$spacing-unit * 6,          // 48px
+  "7": variables.$spacing-unit * 7,          // 56px
+  "8": variables.$spacing-unit * 8,          // 64px
+  "9": variables.$spacing-unit * 9,          // 72px
+  "10": variables.$spacing-unit * 10,        // 80px
+  "11": variables.$spacing-unit * 11,        // 88px
+  "12": variables.$spacing-unit * 12,        // 96px
+  "13": variables.$spacing-unit * 13,        // 104px
+  "14": variables.$spacing-unit * 14,        // 112px
+  "15": variables.$spacing-unit * 15,        // 120px
+  "16": variables.$spacing-unit * 16,        // 128px
+  "17": variables.$spacing-unit * 17,        // 136px
+  "18": variables.$spacing-unit * 18,        // 144px
+  "19": variables.$spacing-unit * 19,        // 152px
+  "20": variables.$spacing-unit * 20,        // 160px
 );
 
 // ==========================================================================

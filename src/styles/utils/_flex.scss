@@ -1,4 +1,19 @@
 @use "./variables";
+@use "./_spacing";
+
+
+.flex {
+  display: flex;
+}
+
+// Generate responsive display classes
+@each $breakpoint, $bp in variables.$breakpoints {
+  @media (min-width: #{$bp}) {
+    .#{$breakpoint}-flex {
+      display: flex;
+    }
+  }
+}
 
 // ==========================================================================
 // FLEXBOX PROPERTY MAPS
@@ -7,8 +22,8 @@
 $flex-directions: (
   "row": row,
   "row-reverse": row-reverse,
-  "col": column,
-  "col-reverse": column-reverse,
+  "column": column,
+  "column-reverse": column-reverse,
 );
 
 $flex-wraps: (
@@ -52,31 +67,31 @@ $align-content: (
 }
 
 @each $key, $value in $flex-directions {
-  .flex-#{$key} {
+  .#{$key} {
     flex-direction: $value;
   }
 }
 
 @each $key, $value in $flex-wraps {
-  .flex-#{$key} {
+  .#{$key} {
     flex-wrap: $value;
   }
 }
 
 @each $key, $value in $justify-content {
-  .flex-justify-content-#{$key} {
+  .jc-#{$key} {
     justify-content: $value;
   }
 }
 
 @each $key, $value in $align-items {
-  .flex-align-items-#{$key} {
+  .ai-#{$key} {
     align-items: $value;
   }
 }
 
 @each $key, $value in $align-content {
-  .flex-align-content-#{$key} {
+  .ac-#{$key} {
     align-content: $value;
   }
 }
@@ -88,32 +103,70 @@ $align-content: (
 @each $breakpoint, $bp-value in variables.$breakpoints {
   @media (min-width: $bp-value) {
     @each $key, $value in $flex-directions {
-      .#{$breakpoint}-flex-#{$key} {
+      .#{$breakpoint}-#{$key} {
         flex-direction: $value;
       }
     }
 
     @each $key, $value in $flex-wraps {
-      .#{$breakpoint}-flex-#{$key} {
+      .#{$breakpoint}-#{$key} {
         flex-wrap: $value;
       }
     }
 
     @each $key, $value in $justify-content {
-      .#{$breakpoint}-flex-justify-content-#{$key} {
+      .#{$breakpoint}-jc-#{$key} {
         justify-content: $value;
       }
     }
 
     @each $key, $value in $align-items {
-      .#{$breakpoint}-flex-align-items-#{$key} {
+      .#{$breakpoint}-ai-#{$key} {
         align-items: $value;
       }
     }
 
     @each $key, $value in $align-content {
-      .#{$breakpoint}-flex-align-content-#{$key} {
+      .#{$breakpoint}-ac-#{$key} {
         align-content: $value;
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// GAP UTILITIES
+// ==========================================================================
+
+// Non-responsive gap utilities
+@each $key, $value in spacing.$spacing-scale {
+  .gap-#{$key} {
+    gap: $value;
+  }
+  
+  .gap-x-#{$key} {
+    column-gap: $value;
+  }
+  
+  .gap-y-#{$key} {
+    row-gap: $value;
+  }
+}
+
+// Responsive gap utilities
+@each $breakpoint, $bp-value in variables.$breakpoints {
+  @media (min-width: $bp-value) {
+    @each $key, $value in spacing.$spacing-scale {
+      .#{$breakpoint}-gap-#{$key} {
+        gap: $value;
+      }
+      
+      .#{$breakpoint}-gap-x-#{$key} {
+        column-gap: $value;
+      }
+      
+      .#{$breakpoint}-gap-y-#{$key} {
+        row-gap: $value;
       }
     }
   }
