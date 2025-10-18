@@ -1,3 +1,5 @@
+@use "variables" as variables;
+
 // ==========================================================================
 // TEXT VARIABLES
 // ==========================================================================
@@ -21,5 +23,15 @@ $font-sizes: (
 @each $size, $value in $font-sizes {
   .fs-#{$size} {
     font-size: $value;
+  }
+}
+
+@each $breakpoint, $bp-value in variables.$breakpoints {
+  @media (min-width: $bp-value) {
+    @each $key, $value in $font-sizes {
+      .#{$breakpoint}-fs-#{$key} {
+        font-size: $value !important;
+      }
+    }
   }
 }
