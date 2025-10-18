@@ -26,7 +26,7 @@ const copyHtmlPlugin = () => {
 };
 
 export default defineConfig({
-    root: '.', // Set root to current directory
+    root: '.',
     base: '/',
     build: {
         outDir: 'dist',
@@ -50,8 +50,7 @@ export default defineConfig({
             '@js': resolve(__dirname, 'src/js'),
             '@styles': resolve(__dirname, 'src/styles'),
             '@html': resolve(__dirname, 'src/html'),
-            '@helpers': resolve(__dirname, 'src/js/helpers'),
-            '@utils': resolve(__dirname, 'src/styles/utils')
+            '@helpers': resolve(__dirname, 'src/js/helpers')
         }
     },
     server: {
@@ -59,11 +58,4 @@ export default defineConfig({
         host: true
     },
     plugins: [copyHtmlPlugin()],
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@use "@utils/variables" as *;`
-            }
-        }
-    }
 });

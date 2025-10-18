@@ -5,11 +5,13 @@ A modern, lightweight boilerplate for web development using HTML, SCSS, and Java
 ## Features
 
 - 🚀 Vite for fast development and building
-- 🎨 SCSS with variables, mixins, and utility classes
+- 🎨 SCSS with [minimal-scss](https://github.com/YassineGallaoui/minimal-scss) utility library
 - 📝 ESLint and Prettier for code quality
 - 🐶 Husky for pre-commit hooks
 - 📱 Responsive design with mobile-first approach
 - 🎯 Modern JavaScript (ES6+)
+- 🧭 Client-side routing system
+- 📊 Built-in performance stats (press 'S' to toggle)
 
 ## Getting Started
 
@@ -50,20 +52,67 @@ npm run build
 ```
 simple-boilerplate/
 ├── src/
+│   ├── js/
+│   │   ├── helpers/
+│   │   │   ├── routing/
+│   │   │   │   ├── router.js
+│   │   │   │   └── appState.js
+│   │   │   ├── auth.js
+│   │   │   ├── grid.js
+│   │   │   └── stats.js
+│   │   ├── auth.js
+│   │   ├── common.js
+│   │   ├── home.js
+│   │   └── page2.js
 │   ├── styles/
-│   │   ├── _variables.scss
-│   │   ├── _base.scss
-│   │   ├── _components.scss
-│   │   ├── _layout.scss
-│   │   ├── _utilities.scss
-│   │   └── main.scss
-│   └── main.js
+│   │   ├── auth.scss       # Authentication page styles
+│   │   └── home.scss       # Home page styles
+│   └── html/
+│       ├── authentication.html
+│       └── page2.html
 ├── public/
+│   └── shaders/
 ├── index.html
 ├── package.json
-├── .eslintrc.json
-├── .prettierrc
+├── vite.config.js
 └── README.md
+```
+
+## Styling with minimal-scss
+
+This project uses [minimal-scss](https://github.com/YassineGallaoui/minimal-scss), a lightweight SCSS utility library that provides:
+
+### Grid System
+- 12-column responsive grid with breakpoints (sm, md, lg)
+- Example: `<div class="sm-col-4 md-col-6 lg-col-8">`
+
+### Flexbox Utilities
+- `flex`, `column`, `row`
+- Justify content: `jc-start`, `jc-center`, `jc-end`, `jc-between`, `jc-around`
+- Align items: `ai-start`, `ai-center`, `ai-end`, `ai-stretch`
+
+### Spacing Utilities
+- Margins: `m-1`, `mt-2`, `ml-4`, etc.
+- Paddings: `p-1`, `pt-2`, `pl-4`, etc.
+- Values from 1 to 12 (each unit = 0.5rem)
+
+### Text Utilities
+- Font sizes: `fs-xs`, `fs-sm`, `fs-md`, `fs-lg`, `fs-xl`
+- Text alignment: `text-left`, `text-center`, `text-right`
+- Font weights: `fw-light`, `fw-normal`, `fw-bold`
+
+### Positioning
+- `pos-relative`, `pos-absolute`, `pos-fixed`, `pos-sticky`
+- `top-0`, `right-0`, `bottom-0`, `left-0`
+
+### CSS Variables Available
+```scss
+--background-color: #ebecd6;
+--foreground-color: #0a100d;
+--accent-light-color: #7ba9f4;
+--accent-color: #3066be;
+--accent-dark-color: #0e4193;
+--transition-duration: 0.3s;
 ```
 
 ## Available Scripts
@@ -74,10 +123,27 @@ simple-boilerplate/
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
 
+## Client-Side Routing
+
+The project includes a custom client-side router that handles:
+- Page transitions with animations
+- Browser history management
+- Dynamic content loading
+
+### Navigation
+- Use absolute paths: `href="/authentication"`, `href="/page2"`
+- The router automatically handles `.html` extensions
+
+## Performance Stats
+
+Press 'S' key to toggle performance statistics showing:
+- Window dimensions
+- Aspect ratio  
+- Real-time FPS counter
+
 ## Pre-commit Hooks
 
 Before each commit, the following checks are automatically run:
-
 - ESLint
 - Prettier
 - Build process

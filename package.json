@@ -30,5 +30,8 @@
     "*.{json,css,scss,md,html}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "@yassine-gallaoui/minimal-scss": "^1.0.1"
   }
 }
