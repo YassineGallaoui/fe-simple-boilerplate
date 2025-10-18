@@ -16,7 +16,7 @@ const copyHtmlPlugin = () => {
             const destDir = resolve(__dirname, 'dist');
             
             try {
-                copyFileSync(resolve(srcDir, 'authentication.html'), resolve(destDir, 'authentication.html'));
+                copyFileSync(resolve(srcDir, 'auth.html'), resolve(destDir, 'auth.html'));
                 copyFileSync(resolve(srcDir, 'page2.html'), resolve(destDir, 'page2.html'));
             } catch (error) {
                 // Files may not exist in dev mode, ignore error
@@ -34,7 +34,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                authentication: resolve(__dirname, 'src/html/authentication.html'),
+                auth: resolve(__dirname, 'src/html/auth.html'),
                 page2: resolve(__dirname, 'src/html/page2.html')
             },
             output: {
