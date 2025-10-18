@@ -5,7 +5,7 @@ A modern, lightweight boilerplate for web development using HTML, SCSS, and Java
 ## Features
 
 - 🚀 Vite for fast development and building
-- 🎨 SCSS with [minimal-scss](https://github.com/YassineGallaoui/minimal-scss) utility library
+- 🎨 CSS utilities with [@yassine-gallaoui/minimal-scss](https://github.com/YassineGallaoui/minimal-scss) library
 - 📝 ESLint and Prettier for code quality
 - 🐶 Husky for pre-commit hooks
 - 📱 Responsive design with mobile-first approach
@@ -80,40 +80,24 @@ simple-boilerplate/
 
 ## Styling with minimal-scss
 
-This project uses [minimal-scss](https://github.com/YassineGallaoui/minimal-scss), a lightweight SCSS utility library that provides:
+This project uses [@yassine-gallaoui/minimal-scss](https://github.com/YassineGallaoui/minimal-scss), a lightweight SCSS utility library that provides:
 
-### Grid System
-- 12-column responsive grid with breakpoints (sm, md, lg)
-- Example: `<div class="sm-col-4 md-col-6 lg-col-8">`
+### Easy Integration
 
-### Flexbox Utilities
-- `flex`, `column`, `row`
-- Justify content: `jc-start`, `jc-center`, `jc-end`, `jc-between`, `jc-around`
-- Align items: `ai-start`, `ai-center`, `ai-end`, `ai-stretch`
+The styling system is integrated by importing the pre-built CSS file in a commonly used JavaScript file (for example `src/js/common.js`):
 
-### Spacing Utilities
-- Margins: `m-1`, `mt-2`, `ml-4`, etc.
-- Paddings: `p-1`, `pt-2`, `pl-4`, etc.
-- Values from 1 to 12 (each unit = 0.5rem)
-
-### Text Utilities
-- Font sizes: `fs-xs`, `fs-sm`, `fs-md`, `fs-lg`, `fs-xl`
-- Text alignment: `text-left`, `text-center`, `text-right`
-- Font weights: `fw-light`, `fw-normal`, `fw-bold`
-
-### Positioning
-- `pos-relative`, `pos-absolute`, `pos-fixed`, `pos-sticky`
-- `top-0`, `right-0`, `bottom-0`, `left-0`
-
-### CSS Variables Available
-```scss
---background-color: #ebecd6;
---foreground-color: #0a100d;
---accent-light-color: #7ba9f4;
---accent-color: #3066be;
---accent-dark-color: #0e4193;
---transition-duration: 0.3s;
+```javascript
+// Import global styles - this makes all utility classes available everywhere
+import '@yassine-gallaoui/minimal-scss/dist/main.min.css';
 ```
+
+This approach:
+- ✅ **Simple**: No SCSS configuration needed
+- ✅ **Global**: All utility classes work everywhere in your HTML
+- ✅ **Performance**: Uses optimized, pre-built CSS
+- ✅ **No conflicts**: Avoids SCSS compilation issues
+
+Since `common.js` is imported by all HTML pages, the styles are automatically available throughout the entire application without any additional imports or configuration.
 
 ## Available Scripts
 
