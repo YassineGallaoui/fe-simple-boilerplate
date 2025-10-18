@@ -1,9 +1,9 @@
 // Import global styles
 import '@yassine-gallaoui/minimal-scss/dist/main.min.css';
 
-import { grid } from './helpers/grid';
-import { router } from './helpers/routing/router';
-import { stats } from './helpers/stats';
+import { grid } from './grid';
+import { router } from './routing/router';
+import { stats } from './stats';
 
 
 document.addEventListener('DOMContentLoaded', () => {
