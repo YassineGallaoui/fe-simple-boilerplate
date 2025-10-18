@@ -1,5 +1,3 @@
-// src/js/helpers/grid.js
-
 class Grid {
   constructor() {
     this.overlay = null;

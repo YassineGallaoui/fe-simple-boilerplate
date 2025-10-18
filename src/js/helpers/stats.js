@@ -1,5 +1,3 @@
-// src/js/helpers/stats.js
-
 class Stats {
     constructor() {
         this.statsDiv = null;
