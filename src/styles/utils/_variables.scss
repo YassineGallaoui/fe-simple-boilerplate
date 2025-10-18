@@ -1,9 +1,3 @@
-// Standard Colors (others are in common.scss)
-$success-color: #28a745;
-$danger-color: #dc3545;
-$warning-color: #ffc107;
-$info-color: #17a2b8;
-
 // Typography
 $font-family-base: -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-size-base: 16px;
@@ -33,6 +27,3 @@ $container-padding: 15px;
 $grid-columns-sm: 4;
 $grid-columns-md: 8;
 $grid-columns-lg: 12;
-
-// Transition duration
-$transition-duration: var(--transition-duration);

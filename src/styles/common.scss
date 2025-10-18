@@ -15,14 +15,25 @@
 }
 
 :root {
+    // Standard Colors
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    // Transition Duration
+    --transition-duration: 0.3s;
+}
+
+// Theme Colors light mode
+:root {
     --background-color: #ebecd6;
     --foreground-color: #0a100d;
     --accent-light-color: #7ba9f4;
     --accent-color: #3066be;
     --accent-dark-color: #0e4193;
-    --transition-duration: 0.3s;
 }
 
+// Theme Colors dark mode
 @media (prefers-color-scheme: dark) {
     :root {
         --background-color: #0a100d;
@@ -31,9 +42,4 @@
         --accent-color: #3066be;
         --accent-dark-color: #0e4193;
     }
-}
-
-.navbarLink {
-    text-align: right;
-    align-self: center;
 }
