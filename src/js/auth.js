@@ -1,3 +1,4 @@
+import '../styles/auth.scss';
 import { AuthEvents, AuthService } from './helpers/auth.js';
 
 // DOM elements

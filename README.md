@@ -71,7 +71,6 @@ simple-boilerplate/
 │       ├── authentication.html
 │       └── page2.html
 ├── public/
-│   └── shaders/
 ├── index.html
 ├── package.json
 ├── vite.config.js
