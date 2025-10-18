@@ -53,8 +53,24 @@ export class Router {
                 page: path.split('/').pop()
             });
 
+            // Determine the correct file path for fetching
+            let fetchPath;
+            if (path === '/index') {
+                fetchPath = '/index.html';
+            } else if (path.startsWith('/')) {
+                // Try production path first (files at root level)
+                const prodPath = `${path}.html`;
+                const devPath = `/src/html${path}.html`;
+                
+                // Check if we're in development mode (Vite dev server)
+                const isDev = import.meta.env.DEV;
+                fetchPath = isDev ? devPath : prodPath;
+            } else {
+                fetchPath = `${path}.html`;
+            }
+
             // Fetch new page content
-            const response = await fetch(`${path}.html`);
+            const response = await fetch(fetchPath);
             const html = await response.text();
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
@@ -92,7 +108,8 @@ export class Router {
             newContent.id = 'current-content';
             newContent.classList.remove('page-enter');
         } catch (error) {
-            console.error('Error loading page:', error);
+            // Handle routing error by showing a fallback or redirecting to home
+            window.location.href = '/';
         } finally {
             resetTransitionState();
         }
