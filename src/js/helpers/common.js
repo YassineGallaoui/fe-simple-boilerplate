@@ -1,5 +1,5 @@
 // Import global styles
-import '@yassine-gallaoui/minimal-scss/dist/main.min.css';
+import 'msccss/dist/main.min.css';
 
 import { grid } from './grid';
 import { router } from './routing/router';

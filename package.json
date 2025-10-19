@@ -32,6 +32,6 @@
     ]
   },
   "dependencies": {
-    "@yassine-gallaoui/minimal-scss": "^1.0.2"
+    "msccss": "^1.0.0"
   }
 }

@@ -5,7 +5,7 @@ A modern, lightweight boilerplate for web development using HTML, SCSS, and Java
 ## Features
 
 - 🚀 Vite for fast development and building
-- 🎨 CSS utilities with [@yassine-gallaoui/minimal-scss](https://github.com/YassineGallaoui/minimal-scss) library
+- 🎨 CSS utilities with [msccss](https://github.com/YassineGallaoui/msc) library
 - 📝 ESLint and Prettier for code quality
 - 🐶 Husky for pre-commit hooks
 - 📱 Responsive design with mobile-first approach
@@ -77,9 +77,9 @@ simple-boilerplate/
 └── README.md
 ```
 
-## Styling with minimal-scss
+## Styling with msc
 
-This project uses [@yassine-gallaoui/minimal-scss](https://github.com/YassineGallaoui/minimal-scss), a lightweight SCSS utility library that provides:
+This project uses [msccss](https://github.com/YassineGallaoui/msc), a lightweight SCSS utility library that provides:
 
 ### Easy Integration
 
@@ -87,7 +87,7 @@ The styling system is integrated by importing the pre-built CSS file in a common
 
 ```javascript
 // Import global styles - this makes all utility classes available everywhere
-import '@yassine-gallaoui/minimal-scss/dist/main.min.css';
+import 'msccss/dist/main.min.css';
 ```
 
 This approach:
