@@ -1,157 +1,101 @@
-import '../styles/auth.scss';
-import { AuthEvents, AuthService } from './helpers/auth.js';
-
-// DOM elements
-const loginTab = document.getElementById('loginTab');
-const signupTab = document.getElementById('signupTab');
-const loginForm = document.getElementById('loginForm');
-const signupForm = document.getElementById('signupForm');
-const authMessage = document.getElementById('authMessage');
-
-// Tab switching functionality
-loginTab.addEventListener('click', () => {
-  console.log("Login tab clicked");
-  showLogin();
-});
-
-signupTab.addEventListener('click', () => {
-  console.log("Signup tab clicked");
-  showSignup();
-});
-
-function showLogin() {
-  loginTab.classList.add('active');
-  signupTab.classList.remove('active');
-  loginForm.classList.remove('hidden');
-  signupForm.classList.add('hidden');
-  clearMessage();
-}
-
-function showSignup() {
-  signupTab.classList.add('active');
-  loginTab.classList.remove('active');
-  signupForm.classList.remove('hidden');
-  loginForm.classList.add('hidden');
-  clearMessage();
-}
-
-// Form submission handlers
-loginForm.addEventListener('submit', handleLogin);
-signupForm.addEventListener('submit', handleSignup);
-
-async function handleLogin(e) {
-  e.preventDefault();
+// Authentication utility functions
+export class AuthService {
+  static API_BASE_URL = 'http://localhost:3000/api/auth';
   
-  const formData = new FormData(e.target);
-  const email = formData.get('email');
-  const password = formData.get('password');
-
-  if (!email || !password) {
-    showMessage('Please fill in all fields', 'error');
-    return;
+  // Get current user from localStorage
+  static getCurrentUser() {
+    const user = localStorage.getItem('user');
+    return user ? JSON.parse(user) : null;
   }
-
-  if (!AuthService.isValidEmail(email)) {
-    showMessage('Please enter a valid email address', 'error');
-    return;
-  }
-
-  try {
-    showMessage('Logging in...', 'info');
-    
-    const result = await AuthService.login(email, password);
-
-    if (result.success) {
-      showMessage('Login successful!', 'success');
-      
-      // Emit login event
-      AuthEvents.emit('login', result.user);
-      
-      // Redirect to homepage after a short delay
-      setTimeout(() => {
-        window.location.href = './index.html';
-      }, 1500);
-    } else {
-      showMessage(result.error, 'error');
-    }
-  } catch (error) {
-    showMessage('Connection error. Please try again.', 'error');
-  }
-}
-
-async function handleSignup(e) {
-  e.preventDefault();
   
-  const formData = new FormData(e.target);
-  const email = formData.get('email');
-  const password = formData.get('password');
-  const confirmPassword = formData.get('confirmPassword');
-
-  if (!email || !password || !confirmPassword) {
-    showMessage('Please fill in all fields', 'error');
-    return;
+  // Check if user is authenticated
+  static isAuthenticated() {
+    return this.getCurrentUser() !== null;
   }
-
-  if (!AuthService.isValidEmail(email)) {
-    showMessage('Please enter a valid email address', 'error');
-    return;
+  
+  // Set user in localStorage
+  static setUser(user) {
+    localStorage.setItem('user', JSON.stringify(user));
   }
-
-  if (password !== confirmPassword) {
-    showMessage('Passwords do not match', 'error');
-    return;
+  
+  // Remove user from localStorage
+  static logout() {
+    localStorage.removeItem('user');
   }
-
-  if (!AuthService.isValidPassword(password)) {
-    showMessage('Password must be at least 6 characters long', 'error');
-    return;
-  }
-
-  try {
-    showMessage('Creating account...', 'info');
+  
+  // Login API call
+  static async login(email, password) {
+    const response = await fetch(`${this.API_BASE_URL}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
     
-    const result = await AuthService.signup(email, password);
-
-    if (result.success) {
-      showMessage('Account created successfully! You can now login.', 'success');
-      
-      // Switch to login form and prefill email
-      setTimeout(() => {
-        showLogin();
-        document.getElementById('loginEmail').value = email;
-      }, 2000);
+    const data = await response.json();
+    
+    if (response.ok) {
+      this.setUser(data.user);
+      return { success: true, user: data.user };
     } else {
-      showMessage(result.error, 'error');
+      return { success: false, error: data.error || 'Login failed' };
     }
-  } catch (error) {
-    showMessage('Connection error. Please try again.', 'error');
+  }
+  
+  // Signup API call
+  static async signup(email, password) {
+    const response = await fetch(`${this.API_BASE_URL}/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
+      return { success: true, message: data.message };
+    } else {
+      return { success: false, error: data.error || 'Signup failed' };
+    }
+  }
+  
+  // Validate email format
+  static isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  
+  // Validate password strength
+  static isValidPassword(password) {
+    return password && password.length >= 6;
   }
 }
 
-function showMessage(message, type) {
-  authMessage.textContent = message;
-  authMessage.className = `auth-message ${type}`;
-  authMessage.style.display = 'block';
-}
-
-function clearMessage() {
-  authMessage.style.display = 'none';
-  authMessage.textContent = '';
-  authMessage.className = 'auth-message';
-}
-
-// Check if user is already logged in
-function checkAuthStatus() {
-  const user = AuthService.getCurrentUser();
-  if (user) {
-    showMessage('You are already logged in!', 'info');
-    setTimeout(() => {
-      window.location.href = './index.html';
-    }, 2000);
+// Event dispatcher for authentication state changes
+export class AuthEvents {
+  static listeners = {
+    login: [],
+    logout: []
+  };
+  
+  static on(event, callback) {
+    if (this.listeners[event]) {
+      this.listeners[event].push(callback);
+    }
+  }
+  
+  static emit(event, data) {
+    if (this.listeners[event]) {
+      this.listeners[event].forEach(callback => callback(data));
+    }
+  }
+  
+  static off(event, callback) {
+    if (this.listeners[event]) {
+      this.listeners[event] = this.listeners[event].filter(cb => cb !== callback);
+    }
   }
 }
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-  checkAuthStatus();
-});

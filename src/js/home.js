@@ -1,5 +1,5 @@
 import '../styles/home.scss';
-import { AuthEvents, AuthService } from './helpers/auth.js';
+import { AuthEvents, AuthService } from './auth.js';
 
 // Authentication status management
 function updateAuthStatus() {

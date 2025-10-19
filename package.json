@@ -32,6 +32,7 @@
     ]
   },
   "dependencies": {
-    "msccss": "^1.0.0"
+    "msccss": "^1.0.2",
+    "yg-vanilla-js-helpers": "^1.0.2"
   }
 }

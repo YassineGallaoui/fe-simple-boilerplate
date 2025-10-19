@@ -19,7 +19,7 @@ This authentication system provides a complete login/signup mechanism that conne
 ### Files
 - `login.html` - Authentication page with login/signup forms
 - `src/js/auth.js` - Authentication form logic and API calls
-- `src/js/helpers/auth.js` - Authentication utility functions and services
+- `src/js/auth.js` - Authentication utility functions and services
 - `src/styles/auth.scss` - Authentication page styles
 - `src/js/home.js` - Homepage with auth status display
 
@@ -149,7 +149,7 @@ Update `AuthService` methods to change:
 - Form validation logic
 
 ### API Configuration
-Change the API base URL in `src/js/helpers/auth.js`:
+Change the API base URL in `src/js/auth.js`:
 ```javascript
 static API_BASE_URL = 'http://localhost:3000/api/auth';
 ```

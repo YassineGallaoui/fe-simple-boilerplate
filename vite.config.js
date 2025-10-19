@@ -83,7 +83,7 @@ export default defineConfig({
             '@js': resolve(__dirname, 'src/js'),
             '@styles': resolve(__dirname, 'src/styles'),
             '@html': resolve(__dirname, 'src/html'),
-            '@helpers': resolve(__dirname, 'src/js/helpers')
+            '@helpers': resolve(__dirname, 'src/js')
         }
     },
     server: {

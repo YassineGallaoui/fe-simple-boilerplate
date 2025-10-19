@@ -1,10 +1,6 @@
 // Import global styles
 import 'msccss/dist/main.min.css';
-
-import { grid } from './grid';
-import { router } from './routing/router';
-import { stats } from './stats';
-
+import { grid, router, stats } from 'yg-vanilla-js-helpers';
 
 document.addEventListener('DOMContentLoaded', () => {
   router.init();
