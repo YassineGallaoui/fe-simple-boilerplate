@@ -1,0 +1,8 @@
+.footer {
+    border-top: 1px solid color-mix(in srgb, var(--foreground-color) 10%, transparent);
+    background-color: color-mix(in srgb, var(--background-color) 90%, transparent);
+}
+
+.titoletto {
+    font-weight: bold;
+}

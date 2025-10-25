@@ -10,11 +10,11 @@
 
 <body>
   <header class="container">
-    <div class="row">
-      <h1 class="sm-col-3 md-col-3 lg-col-4">
+    <nav class="row">
+      <h1 class="sm-col-2 md-col-3 lg-col-4">
         Homepage
       </h1>
-      <div class="sm-col-1 md-col-5 lg-col-8 flex row jc-end ai-center">
+      <div class="sm-col-2 md-col-5 lg-col-8 flex row jc-end ai-center">
         <div id="authStatus" class="auth-status">
           <!-- Will be populated by JavaScript -->
         </div>
@@ -24,7 +24,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
   <main class="container">
     <div class="row mt-12">
@@ -61,8 +61,11 @@
     </div>
 
     <div class="row mt-8">
-      <div class="sm-col-4 md-col-5 lg-col-8">
-        <h2 class="fs-2xl">Content</h2>
+      <div class="sm-col-4 md-col-5 lg-col-6">
+        <div class="flex row jc-between ai-center">
+          <h2 class="fs-2xl">Content</h2>
+          <span class="fs-xs">.sm-col-4 .md-col-5 .lg-col-6</span>
+        </div>
         This boilerplate has:
         <ul>
           <li>vanilla approach: html, (s)css, js</li>
@@ -74,8 +77,11 @@
           <li>basic custom routing</li>
         </ul>
       </div>
-      <div class="sm-col-4 md-col-3 lg-col-4">
-        <h2 class="fs-2xl">Test</h2>
+      <div class="sm-col-4 md-col-3 lg-col-4 lg-offset-8">
+        <div class="flex row jc-between ai-center">
+          <h2 class="fs-2xl">Test</h2>
+          <span class="fs-xs">.sm-col-4 .md-col-3 .lg-col-4 .lg-offset-8</span>
+        </div>
         <ul>
           <li>Press "g" to toggle the grid</li>
           <li>Press "s" to toggle the screen info</li>
@@ -84,6 +90,40 @@
       </div>
     </div>
   </main>
+  <footer class="footer mt-8 py-10 pb-16">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 md-col-3">
+          <div class="flex column">
+            <span class="mb-2">&copy; 2025 Simple Boilerplate</span>
+            <span>random motto</span>
+            <span>random line</span>
+          </div>
+        </div>
+        <div class="col-4 md-col-3">
+          <div class="flex column">
+            <span class="fs-xs mb-1 titoletto">SERVICES</span>
+            <span>ref 1</span>
+            <span>ref 2</span>
+            <span>ref 3</span>
+            <span>ref 4</span>
+            <span>ref 5</span>
+            <span>ref 6</span>
+          </div>
+        </div>
+        <div class="col-4 md-col-3">
+          <div class="flex column">
+            <span class="fs-xs mb-1 titoletto">USEFUL LINKS</span>
+            <span>ref 1</span>
+            <span>ref 2</span>
+            <span class="mb-3">ref 3</span>
+            <span>ref 4</span>
+            <span>ref 5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
   <script type="module" src="./src/js/common.js"></script>
   <script type="module" src="./src/js/home.js"></script>
 </body>
