@@ -9,28 +9,18 @@
 </head>
 
 <body>
-  <header class="container">
-    <nav class="row">
-      <h1 class="sm-col-2 md-col-3 lg-col-4">
-        Page 2
-      </h1>
-      <div class="sm-col-2 md-col-5 lg-col-8 flex row jc-end ai-center">
-        <div id="authStatus" class="auth-status">
-          <!-- Will be populated by JavaScript -->
-        </div>
-        <div>
-          <a class="navbarLink fs-lg ml-2" href="/index">
-            Homepage
-          </a>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <header-component 
+    title="Page 2" 
+    links='[{"url":"/index","text":"Homepage"}]'>
+  </header-component>
   <main class="container">
     <div class="row mt-4">
       <h2 class="sm-col-4 md-col-4 lg-col-8">this is page 2</h2>
     </div>
   </main>
+  <footer-component></footer-component>
+  <script type="module" src="/src/js/components/header-component.js"></script>
+  <script type="module" src="/src/js/components/footer-component.js"></script>
   <script type="module" src="/src/js/common.js"></script>
   <script type="module" src="/src/js/page2.js"></script>
 </body>

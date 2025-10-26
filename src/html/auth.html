@@ -9,26 +9,10 @@
 </head>
 
 <body>
-    <header class="container">
-      <nav class="row">
-        <h1 class="sm-col-2 md-col-3 lg-col-4">
-          Authentication
-        </h1>
-        <div class="sm-col-2 md-col-5 lg-col-8 flex row jc-end ai-center">
-          <div id="authStatus" class="auth-status">
-            <!-- Will be populated by JavaScript -->
-          </div>
-          <div>
-            <a class="navbarLink fs-lg ml-2" href="/index">
-              Homepage
-            </a>
-            <a class="navbarLink fs-lg ml-2" href="/page2">
-              Page 2
-            </a>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <header-component 
+      title="Authentication" 
+      links='[{"url":"/index","text":"Homepage"},{"url":"/page2","text":"Page 2"}]'>
+    </header-component>
     <main class="container">
       <div class="row mt-12">
         <div class="sm-col-4 md-col-4 lg-col-4 lg-offset-4 md-offset-2 d-flex column ai-center auth-container">
@@ -71,6 +55,9 @@
         </div>
       </div>
     </main>
+  <footer-component></footer-component>
+  <script type="module" src="/src/js/components/header-component.js"></script>
+  <script type="module" src="/src/js/components/footer-component.js"></script>
   <script type="module" src="/src/js/common.js"></script>
   <script type="module" src="/src/js/auth.js"></script>
 </body>

@@ -9,23 +9,10 @@
 </head>
 
 <body>
-  <header class="container">
-    <nav class="row">
-      <h1 class="sm-col-2 md-col-3 lg-col-4">
-        Homepage
-      </h1>
-      <div class="sm-col-2 md-col-5 lg-col-8 flex row jc-end ai-center">
-        <div id="authStatus" class="auth-status">
-          <!-- Will be populated by JavaScript -->
-        </div>
-        <div>
-          <a class="navbarLink fs-lg ml-2" href="/page2">
-            Page 2
-          </a>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <header-component 
+    title="Homepage" 
+    links='[{"url":"/page2","text":"Page 2"}]'>
+  </header-component>
   <main class="container">
     <div class="row mt-12">
       <div class="bg-green sm-col-3 md-col-2 lg-col-4">takes 4 cols on large desktop, 2 on tablet and 3
@@ -90,40 +77,9 @@
       </div>
     </div>
   </main>
-  <footer class="footer mt-8 py-10 pb-16">
-    <div class="container">
-      <div class="row">
-        <div class="col-4 md-col-3">
-          <div class="flex column">
-            <span class="mb-2">&copy; 2025 Simple Boilerplate</span>
-            <span>random motto</span>
-            <span>random line</span>
-          </div>
-        </div>
-        <div class="col-4 md-col-3">
-          <div class="flex column">
-            <span class="fs-xs mb-1 titoletto">SERVICES</span>
-            <span>ref 1</span>
-            <span>ref 2</span>
-            <span>ref 3</span>
-            <span>ref 4</span>
-            <span>ref 5</span>
-            <span>ref 6</span>
-          </div>
-        </div>
-        <div class="col-4 md-col-3">
-          <div class="flex column">
-            <span class="fs-xs mb-1 titoletto">USEFUL LINKS</span>
-            <span>ref 1</span>
-            <span>ref 2</span>
-            <span class="mb-3">ref 3</span>
-            <span>ref 4</span>
-            <span>ref 5</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <footer-component></footer-component>
+  <script type="module" src="./src/js/components/header-component.js"></script>
+  <script type="module" src="./src/js/components/footer-component.js"></script>
   <script type="module" src="./src/js/common.js"></script>
   <script type="module" src="./src/js/home.js"></script>
 </body>
