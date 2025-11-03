@@ -12,6 +12,15 @@
   font-size: 0.9rem;
 }
 
+.box-container{
+  border-radius: var(--spacing-unit);
+  padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 1);
+}
+
+.cols-info{
+  text-align: right;
+}
+
 .logout-btn {
   background: var(--accent-color);
   color: var(--background-color);
