@@ -1,5 +1,5 @@
 {
-  "name": "simpleboilerplate",
+  "name": "fe-simple-boilerplate",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -33,6 +33,6 @@
   },
   "dependencies": {
     "msccss": "^1.0.5",
-    "yg-vanilla-js-helpers": "^1.0.7"
+    "yg-vanilla-js-helpers": "^1.0.9"
   }
 }
