@@ -6,7 +6,7 @@ import { defineConfig } from 'vite';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = resolve(__filename, '..');
 
-// Function to recursively find all HTML files
+// Function to recursively find all HTML files and return them with clean names
 const findHtmlFiles = (dir, baseDir = __dirname) => {
     const files = {};
     
@@ -21,10 +21,9 @@ const findHtmlFiles = (dir, baseDir = __dirname) => {
                 // Recursively search subdirectories
                 Object.assign(files, findHtmlFiles(fullPath, baseDir));
             } else if (stat.isFile() && item.endsWith('.html')) {
-                // Generate a key name from the file path
-                const relativePath = fullPath.replace(baseDir + '/', '');
-                const keyName = relativePath.replace(/[/\\]/g, '-').replace('.html', '');
-                files[keyName] = fullPath;
+                // Use just the filename without .html as the key (e.g., 'page2' instead of 'src-html-page2')
+                const fileName = item.replace('.html', '');
+                files[fileName] = fullPath;
             }
         }
     } catch (error) {
@@ -34,24 +33,22 @@ const findHtmlFiles = (dir, baseDir = __dirname) => {
     return files;
 };
 
-// Custom plugin to copy HTML files to root for production routing
-const copyHtmlPlugin = () => {
+// Plugin to move HTML files from dist/src/html/* to dist/* for production routing
+const flattenHtmlPlugin = () => {
     return {
-        name: 'copy-html',
+        name: 'flatten-html',
         writeBundle() {
-            // Copy HTML files to root for proper routing in production
-            const srcDir = resolve(__dirname, 'dist/src/html');
-            const destDir = resolve(__dirname, 'dist');
+            const srcHtmlDir = resolve(__dirname, 'dist/src/html');
+            const distRoot = resolve(__dirname, 'dist');
             
             try {
-                // Find all HTML files in src/html and copy them
-                const htmlFiles = readdirSync(srcDir).filter(file => file.endsWith('.html'));
+                const htmlFiles = readdirSync(srcHtmlDir).filter(file => file.endsWith('.html'));
                 
                 for (const file of htmlFiles) {
-                    copyFileSync(resolve(srcDir, file), resolve(destDir, file));
+                    copyFileSync(resolve(srcHtmlDir, file), resolve(distRoot, file));
                 }
             } catch (error) {
-                // Files may not exist in dev mode, ignore error
+                // Directory may not exist, ignore
             }
         }
     };
@@ -69,11 +66,6 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 // Dynamically find all HTML files in src/html
                 ...findHtmlFiles(resolve(__dirname, 'src/html'))
-            },
-            output: {
-                entryFileNames: 'assets/[name]-[hash].js',
-                chunkFileNames: 'assets/[name]-[hash].js',
-                assetFileNames: 'assets/[name]-[hash].[ext]'
             }
         }
     },
@@ -90,5 +82,5 @@ export default defineConfig({
         open: true,
         host: true
     },
-    plugins: [copyHtmlPlugin()],
+    plugins: [flattenHtmlPlugin()]
 });
