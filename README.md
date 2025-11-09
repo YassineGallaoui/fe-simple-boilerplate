@@ -41,6 +41,24 @@ fe-simple-boilerplate/
 - `msccss`: Lightweight classes-utility CSS library
 - `yg-vanilla-js-helpers`: Grid overlay, stats panel, and router utilities
 
+## Using from GitHub Template
+
+To create a new project using this boilerplate:
+
+1. **Go to the GitHub repository:** Visit [https://github.com/YassineGallaoui/simpleBoilerplate](https://github.com/YassineGallaoui/simpleBoilerplate)
+
+2. **Use this template:** Click the "Use this template" button (green button) to create a new repository based on this boilerplate.
+
+3. **Create your repository:** Choose a name for your new repository and create it on GitHub.
+
+4. **Clone your new repository:**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   cd YOUR_REPO_NAME
+   ```
+
+5. **Continue with the setup below.**
+
 ## Getting Started
 
 1. **Install dependencies:**
