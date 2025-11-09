@@ -1,146 +1,97 @@
-# Simple Boilerplate
+# FE Simple Boilerplate
 
-A modern, lightweight boilerplate for web development using HTML, SCSS, and JavaScript.
+A modern frontend boilerplate built with Vite, SCSS, and utility-first CSS. Features client-side routing, grid overlay for development, and performance stats panel.
 
 ## Features
 
-- 🚀 Vite for fast development and building
-- 🎨 CSS utilities with [msccss](https://github.com/YassineGallaoui/msc) library
-- 📝 ESLint and Prettier for code quality
-- 🐶 Husky for pre-commit hooks
-- 📱 Responsive design with mobile-first approach
-- 🎯 Modern JavaScript (ES6+)
-- 🧭 Client-side routing system
-- 📊 Built-in performance stats (press 'S' to toggle)
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/simple-boilerplate.git
-cd simple-boilerplate
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Start the development server:
-
-```bash
-npm run dev
-```
-
-4. Build for production:
-
-```bash
-npm run build
-```
+- **Vite**: Fast build tool with hot module replacement
+- **SCSS**: Sass preprocessing for advanced styling
+- **Client-side Routing**: Page transitions with history API
+- **Grid Overlay**: Toggleable CSS grid overlay (Alt+G) for layout debugging
+- **Performance Stats**: Stats panel (Alt+S)
+- **Web Components**: Reusable header and footer components
+- **ESLint + Prettier**: Code linting and formatting
+- **Husky**: Git hooks for pre-commit quality checks
 
 ## Project Structure
 
 ```
-simple-boilerplate/
+fe-simple-boilerplate/
+├── index.html                 # Main entry point
+├── package.json              # Dependencies and scripts
+├── vite.config.js            # Vite configuration with HTML flattening
 ├── src/
+│   ├── html/
+│   │   ├── page2.html        # Additional page for routing
 │   ├── js/
-│   │   ├── helpers/
-│   │   │   ├── routing/
-│   │   │   │   ├── router.js
-│   │   │   │   └── appState.js
-│   │   │   ├── auth.js
-│   │   │   ├── grid.js
-│   │   │   └── stats.js
-│   │   ├── auth.js
-│   │   ├── common.js
-│   │   ├── home.js
-│   │   └── page2.js
-│   ├── styles/
-│   │   ├── auth.scss       # Authentication page styles
-│   │   └── home.scss       # Home page styles
-│   └── html/
-│       ├── authentication.html
-│       └── page2.html
-├── public/
-├── index.html
-├── package.json
-├── vite.config.js
-└── README.md
+│   │   ├── common.js         # Global setup (router, grid, stats, etc...)
+│   │   ├── home.js           # Home page logic
+│   │   ├── page2.js          # Page 2 logic
+│   │   └── components/
+│   │       ├── header-component.js  # Header web component
+│   │       └── footer-component.js  # Footer web component
+│   └── styles/
+│       ├── common.scss       # Global styles
+│       ├── home.scss         # Home page styles
+│       └── page2.scss        # Page 2 styles
 ```
 
-## Styling with msc
+## Dependencies
 
-This project uses [msccss](https://github.com/YassineGallaoui/msc), a lightweight SCSS utility library that provides:
+- `msccss`: Lightweight classes-utility CSS library
+- `yg-vanilla-js-helpers`: Grid overlay, stats panel, and router utilities
 
-### Easy Integration
+## Getting Started
 
-The styling system is integrated by importing the pre-built CSS file in a commonly used JavaScript file (for example `src/js/common.js`):
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```javascript
-// Import global styles - this makes all utility classes available everywhere
-import 'msccss/dist/main.min.css';
-```
+2. **Start development server:**
+   ```bash
+   npm run dev
+   ```
 
-This approach:
-- ✅ **Simple**: No SCSS configuration needed
-- ✅ **Global**: All utility classes work everywhere in your HTML
-- ✅ **Performance**: Uses optimized, pre-built CSS
-- ✅ **No conflicts**: Avoids SCSS compilation issues
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-Since `common.js` is imported by all HTML pages, the styles are automatically available throughout the entire application without any additional imports or configuration.
+4. **Preview production build:**
+   ```bash
+   npm run preview
+   ```
 
-## Available Scripts
+## Development Features
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
+### Grid Overlay
+- **Toggle**: Press `Alt + G` to show/hide the CSS grid overlay
+- **Purpose**: Helps with layout debugging and responsive design
+- **Default**: Visible on page load (configured in `common.js`)
 
-## Client-Side Routing
+### Performance Stats
+- **Toggle**: Press `Alt + S` to show/hide the performance panel
+- **Metrics**: FPS, memory usage, and render time
+- **Default**: Hidden on page load
 
-The project includes a custom client-side router that handles:
-- Page transitions with animations
-- Browser history management
-- Dynamic content loading
+### Routing
+- Client-side routing with smooth page transitions
+- Automatic HTML flattening in production builds
+- History API support for browser back/forward buttons
 
-### Navigation
-- Use absolute paths: `href="/authentication"`, `href="/page2"`
-- The router automatically handles `.html` extensions
+## Web Components
 
-## Performance Stats
+The boilerplate includes two native Web Components:
 
-Press 'S' key to toggle performance statistics showing:
-- Window dimensions
-- Aspect ratio  
-- Real-time FPS counter
+- `<header-component>`: Site header with navigation
+- `<footer-component>`: Site footer
 
-## Pre-commit Hooks
+These are defined in `src/js/components/` and can be used in any HTML file.
 
-Before each commit, the following checks are automatically run:
-- ESLint
-- Prettier
-- Build process
+## Styling
 
-If any of these checks fail, the commit will be prevented.
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+- Uses SCSS for advanced CSS features (variables, nesting, mixins)
+- Imports `msccss` utility classes for rapid prototyping
+- Page-specific styles in `src/styles/`
+- Global styles in `src/styles/common.scss`
